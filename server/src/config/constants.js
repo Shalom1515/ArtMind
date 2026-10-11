@@ -43,3 +43,18 @@ export const MESSAGE_STATUSES = ['new', 'read', 'replied'];
 export const ROLES = ['user', 'admin'];
 
 export const COOKIE_NAME = 'artmind_token';
+
+export const GUEST_COOKIE = 'artmind_guest';
+
+export const CATEGORY_IMAGES = Object.fromEntries(CATEGORIES.map((name) => [name, `/images/categories/${name.toLowerCase()}.jpg`]));
+
+export const SEARCH_SUGGESTIONS = ['calm landscapes', 'abstract with warm colours', 'religious paintings on wood panel'];
+
+export const ASSISTANT_SUGGESTIONS = [
+  'Explain impressionism in simple words',
+  'Show me calm paintings for a bedroom',
+  'What is gold leaf?',
+  'Find religious paintings on wood panel',
+  'Oil or tempera, what is the difference?',
+  'Which artist painted the most birds?',
+];

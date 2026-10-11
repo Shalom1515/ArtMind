@@ -26,6 +26,9 @@ const paintingSchema = new mongoose.Schema(
     tags: { type: [String], default: [] },
     tones: { type: [hex], default: [] },
     palette: { type: [hex], default: [] },
+    dominantColour: { type: String, enum: [...COLOUR_GROUPS.map((c) => c.key), ''], default: '' },
+    embedding: { type: [Number], default: undefined, select: false },
+    viewCount: { type: Number, default: 0, min: 0 },
     featured: { type: Boolean, default: false },
     heroOfDay: { type: Boolean, default: false },
     image: { type: String, required: true },
@@ -35,7 +38,12 @@ const paintingSchema = new mongoose.Schema(
 
 paintingSchema.index({ category: 1, year: -1 });
 paintingSchema.index({ artist: 1 });
-paintingSchema.index({ title: 'text', tags: 'text', description: 'text', style: 'text' });
+paintingSchema.index({ artistSlug: 1 });
+paintingSchema.index({ viewCount: -1 });
+paintingSchema.index(
+  { title: 'text', tags: 'text', description: 'text' },
+  { weights: { title: 5, tags: 3, description: 1 }, name: 'painting_text' },
+);
 
 paintingSchema.pre('validate', function setOrientation() {
   if (this.widthCm && this.heightCm) {

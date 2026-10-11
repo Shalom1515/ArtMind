@@ -4,7 +4,7 @@ const messageSchema = new mongoose.Schema(
   {
     role: { type: String, enum: ['user', 'assistant'], required: true },
     text: { type: String, required: true, maxlength: 4000 },
-    paintings: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Painting' }],
+    paintings: { type: [String], default: [] },
     followUps: { type: [String], default: [] },
   },
   { timestamps: { createdAt: true, updatedAt: false } },
