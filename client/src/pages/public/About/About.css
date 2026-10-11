@@ -1,2 +1,188 @@
-.page-about {
+.page-about__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.page-about__title {
+  max-width: 18ch;
+  margin-bottom: var(--space-4);
+  font-size: var(--text-2xl);
+}
+
+.page-about__intro > p {
+  max-width: 52ch;
+  color: var(--colour-ink-soft);
+}
+
+.page-about__intro > p + p {
+  margin-top: var(--space-3);
+}
+
+.page-about__studio {
+  width: 100%;
+  max-width: 960px;
+  margin-top: var(--space-5);
+}
+
+@media (max-width: 639px) {
+  .page-about__studio .framed__box {
+    aspect-ratio: 8 / 3 !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-about__title {
+    font-size: var(--text-3xl);
+  }
+}
+
+.page-about__features {
+  padding-block: var(--space-6);
+  background: var(--colour-band);
+}
+
+.page-about__heading {
+  margin-bottom: var(--space-5);
+}
+
+.page-about__rows {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.page-about__row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--colour-card);
+  border: var(--border);
+}
+
+.page-about__drawing {
+  width: 100%;
+  max-width: 420px;
+  align-self: center;
+}
+
+.page-about__row-title {
+  font-size: var(--text-xl);
+}
+
+.page-about__row-text p {
+  margin-top: var(--space-2);
+  max-width: 46ch;
+  color: var(--colour-ink-soft);
+}
+
+@media (min-width: 640px) {
+  .page-about__rows {
+    gap: 0;
+  }
+
+  .page-about__row {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-6);
+    padding: var(--space-4) var(--space-5);
+    background: transparent;
+    border: 0;
+    border-bottom: var(--border);
+  }
+
+  .page-about__row:nth-child(odd) {
+    background: var(--colour-card);
+  }
+
+  .page-about__row--flip {
+    flex-direction: row-reverse;
+  }
+
+  .page-about__drawing {
+    flex: 0 0 45%;
+    max-width: none;
+  }
+
+  .page-about__drawing .framed__box {
+    border: var(--border);
+  }
+
+  .page-about__row-text {
+    flex: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-about__features {
+    padding-block: var(--space-7);
+  }
+
+  .page-about__row {
+    gap: var(--space-8);
+    padding: var(--space-4) var(--space-6);
+  }
+}
+
+.page-about__team {
+  padding-block: var(--space-6);
+}
+
+.page-about__people {
+  display: grid;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.page-about__person {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  padding: var(--space-4);
+  background: var(--colour-card);
+  border: var(--border);
+}
+
+.page-about__photo {
+  width: 76px !important;
+  height: 76px !important;
+}
+
+.page-about__name {
+  font-size: var(--text-xl);
+}
+
+.page-about__role {
+  color: var(--colour-muted);
+  font-size: var(--text-sm);
+}
+
+@media (min-width: 640px) {
+  .page-about__people {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-4);
+  }
+
+  .page-about__person {
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-5) var(--space-4);
+    text-align: center;
+  }
+
+  .page-about__photo {
+    width: 96px !important;
+    height: 96px !important;
+  }
+}
+
+.page-about__credit {
+  margin-top: var(--space-5);
+  padding-top: var(--space-4);
+  border-top: var(--border);
+  font-size: var(--text-sm);
+  color: var(--colour-muted);
+  text-align: center;
 }

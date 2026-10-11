@@ -1,2 +1,139 @@
-.page-search {
+.page-search__top {
+  display: grid;
+  gap: var(--space-4);
+  scroll-margin-top: var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .page-search__top {
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: var(--space-6);
+  }
+
+  .page-search__sort {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+  }
+
+  .page-search__chips-block {
+    grid-column: 1 / -1;
+  }
+}
+
+.page-search__for {
+  font-size: var(--text-md);
+  color: var(--colour-muted);
+}
+
+.page-search__query {
+  margin-top: var(--space-1);
+  overflow-wrap: anywhere;
+}
+
+.page-search__sort {
+  min-width: 220px;
+}
+
+.page-search__understood {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3) var(--space-4);
+}
+
+.page-search__understood-label {
+  font-family: var(--font-serif);
+  font-size: var(--text-md);
+}
+
+.page-search__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.page-search__chips .chip {
+  white-space: normal;
+}
+
+.page-search__hint {
+  margin-top: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--colour-muted);
+}
+
+.page-search__results {
+  margin-top: var(--space-6);
+}
+
+.page-search__grid {
+  transition: opacity var(--speed) var(--ease);
+}
+
+.page-search__grid--busy {
+  opacity: 0.55;
+}
+
+.page-search__tips {
+  margin-top: var(--space-3);
+  padding-left: var(--space-5);
+  list-style: disc;
+  text-align: left;
+  color: var(--colour-ink-soft);
+}
+
+.page-search__tips li + li {
+  margin-top: var(--space-1);
+}
+
+.page-search__refine {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-7);
+}
+
+.page-search__refine .btn {
+  width: 100%;
+  max-width: 340px;
+}
+
+.page-search__start {
+  max-width: 640px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.page-search__start-lead {
+  margin: var(--space-3) auto 0;
+}
+
+.page-search__form {
+  display: flex;
+  margin-top: var(--space-5);
+}
+
+.page-search__input {
+  flex: 1;
+  min-width: 0;
+  border-right: 0;
+}
+
+.page-search__submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 46px;
+  background: var(--colour-ink);
+  color: var(--colour-page);
+}
+
+.page-search__submit:hover {
+  background: var(--colour-ink-soft);
+}
+
+.page-search__examples {
+  justify-content: center;
+  margin-top: var(--space-4);
 }

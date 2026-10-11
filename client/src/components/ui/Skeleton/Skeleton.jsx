@@ -40,3 +40,13 @@ export function Loading({ label = 'Loading', children, className }) {
     </div>
   );
 }
+
+export function SkeletonGrid({ count = 8, ratio = '4 / 3', label = 'Loading paintings', className }) {
+  return (
+    <Loading label={label} className={className}>
+      {Array.from({ length: count }, (_, i) => (
+        <Skeleton key={i} variant="card" ratio={ratio} />
+      ))}
+    </Loading>
+  );
+}
