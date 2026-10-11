@@ -8,3 +8,4 @@ export { SearchLog } from './SearchLog.js';
 export { Conversation } from './Conversation.js';
 export { ContactMessage } from './ContactMessage.js';
 export { Session } from './Session.js';
+export { Faq } from './Faq.js';

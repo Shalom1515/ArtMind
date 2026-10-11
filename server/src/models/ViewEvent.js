@@ -13,5 +13,6 @@ const viewEventSchema = new mongoose.Schema(
 viewEventSchema.index({ createdAt: -1 });
 viewEventSchema.index({ painting: 1, createdAt: -1 });
 viewEventSchema.index({ user: 1, createdAt: -1 });
+viewEventSchema.index({ visitorId: 1, painting: 1, createdAt: -1 });
 
 export const ViewEvent = mongoose.model('ViewEvent', viewEventSchema);

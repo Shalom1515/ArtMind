@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import { requireDb } from '../middleware/database.js';
 import admin from './admin.js';
 import artists from './artists.js';
 import assistant from './assistant.js';
@@ -23,18 +24,19 @@ api.use('/health', health);
 api.use('/options', options);
 api.use('/faq', faq);
 api.use('/auth', auth);
-api.use('/home', home);
-api.use('/categories', categories);
-api.use('/paintings', paintings);
-api.use('/artists', artists);
-api.use('/collections', collections);
-api.use('/search', search);
-api.use('/identify', identify);
-api.use('/recommendations', recommendations);
 api.use('/me', me);
 api.use('/favourites', favourites);
-api.use('/assistant', assistant);
-api.use('/contact', contact);
+api.use('/recommendations', recommendations);
 api.use('/admin', admin);
+api.use('/assistant', assistant);
+
+api.use('/home', requireDb, home);
+api.use('/categories', requireDb, categories);
+api.use('/paintings', requireDb, paintings);
+api.use('/artists', requireDb, artists);
+api.use('/collections', requireDb, collections);
+api.use('/search', requireDb, search);
+api.use('/identify', requireDb, identify);
+api.use('/contact', requireDb, contact);
 
 export default api;

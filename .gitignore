@@ -24,3 +24,6 @@ docs/test_images/*.png
 .idea/
 .DS_Store
 Thumbs.db
+
+# MobileNet files downloaded on the first run
+server/data/models/

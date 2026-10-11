@@ -1,13 +1,8 @@
 import { Router } from 'express';
-import { readFile } from 'node:fs/promises';
-import path from 'node:path';
-import { config } from '../config/env.js';
+import { faq } from '../controllers/catalogueController.js';
 
 const router = Router();
 
-router.get('/', async (req, res) => {
-  const items = JSON.parse(await readFile(path.join(config.paths.seed, 'faq.json'), 'utf8'));
-  res.json({ items });
-});
+router.get('/', faq);
 
 export default router;
