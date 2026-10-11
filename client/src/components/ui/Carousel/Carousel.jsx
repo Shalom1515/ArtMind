@@ -19,9 +19,13 @@ export default function Carousel({ children, itemWidth = '72%', gap = 16, label 
     update();
     el.addEventListener('scroll', update, { passive: true });
     window.addEventListener('resize', update);
+    const observer = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(update) : null;
+    observer?.observe(el);
+    if (el.firstElementChild) observer?.observe(el.firstElementChild);
     return () => {
       el.removeEventListener('scroll', update);
       window.removeEventListener('resize', update);
+      observer?.disconnect();
     };
   }, [update, children]);
 

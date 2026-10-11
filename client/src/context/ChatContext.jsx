@@ -13,6 +13,8 @@ export const WELCOME = {
   followUps: [],
 };
 
+export const CHAT_ERROR = 'Something went wrong. Please try again.';
+
 function readSaved() {
   try {
     return JSON.parse(sessionStorage.getItem(STORAGE_KEY)) || null;
@@ -22,101 +24,134 @@ function readSaved() {
 }
 
 export function ChatProvider({ children }) {
-  const { user } = useAuth();
+  const { user, isLoading } = useAuth();
   const saved = useRef(readSaved());
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState(saved.current?.messages || [WELCOME]);
   const [conversationId, setConversationId] = useState(saved.current?.conversationId || null);
   const [context, setContext] = useState(saved.current?.context || {});
+  const [draft, setDraft] = useState('');
   const [pending, setPending] = useState(false);
-  const [error, setError] = useState(null);
-  const lastUser = useRef(user?.id);
+  const [failed, setFailed] = useState(null);
+  const [version, setVersion] = useState(0);
+  const lastUser = useRef(saved.current ? saved.current.userId ?? null : undefined);
+  const launcherRef = useRef(null);
+  const state = useRef({});
+  state.current = { messages, conversationId, context, pending };
 
   useEffect(() => {
     try {
-      sessionStorage.setItem(STORAGE_KEY, JSON.stringify({ messages: messages.slice(-40), conversationId, context }));
+      if (lastUser.current === undefined) return;
+      sessionStorage.setItem(STORAGE_KEY, JSON.stringify({ userId: lastUser.current, messages: messages.slice(-40), conversationId, context }));
     } catch {
     }
-  }, [messages, conversationId, context]);
+  }, [messages, conversationId, context, isLoading]);
 
   const reset = useCallback(() => {
     setMessages([WELCOME]);
     setConversationId(null);
     setContext({});
-    setError(null);
+    setDraft('');
+    setFailed(null);
   }, []);
 
   useEffect(() => {
-    if (lastUser.current !== user?.id) {
-      lastUser.current = user?.id;
+    if (isLoading) return;
+    const id = user?.id ?? null;
+    if (lastUser.current === undefined) {
+      lastUser.current = id;
+      return;
+    }
+    if (lastUser.current !== id) {
+      lastUser.current = id;
       reset();
     }
-  }, [user, reset]);
+  }, [user, isLoading, reset]);
 
-  const send = useCallback(
-    async (text, extraContext) => {
-      const message = String(text || '').trim();
-      if (!message || pending) return null;
-      const withContext = { ...context, ...extraContext };
+  const ask = useCallback(async (message, { addBubble = true } = {}) => {
+    const now = state.current;
+    if (!message || now.pending) return null;
+    if (addBubble) {
       const mine = { id: `local${Date.now()}`, role: 'user', text: message, paintings: [], followUps: [], createdAt: new Date().toISOString() };
       setMessages((list) => [...list, mine]);
-      setPending(true);
-      setError(null);
-      try {
-        const history = messages
-          .filter((m) => m.id !== 'welcome')
-          .slice(-10)
-          .map((m) => ({ role: m.role, text: m.text, paintings: (m.paintings || []).map((p) => p.slug) }));
-        const result = await assistantApi.sendMessage({ conversationId, message, context: withContext, history });
-        setConversationId(result.conversationId);
-        setMessages((list) => [...list, result.reply]);
-        return result.reply;
-      } catch (err) {
-        setError(err.message || 'The assistant could not answer just now. Please try again.');
-        return null;
-      } finally {
-        setPending(false);
-      }
-    },
-    [context, conversationId, messages, pending],
-  );
+    }
+    setPending(true);
+    setFailed(null);
+    try {
+      const history = now.messages
+        .filter((m) => m.id !== 'welcome')
+        .slice(-10)
+        .map((m) => ({ role: m.role, text: m.text, paintings: (m.paintings || []).map((p) => p.slug) }));
+      const result = await assistantApi.sendMessage({ conversationId: now.conversationId, message, context: now.context, history });
+      setConversationId(result.conversationId);
+      setMessages((list) => [...list, result.reply]);
+      if (result.conversationId) setVersion((v) => v + 1);
+      return result.reply;
+    } catch {
+      setFailed(message);
+      return null;
+    } finally {
+      setPending(false);
+    }
+  }, []);
 
-  const open = useCallback(
-    ({ painting, query, message } = {}) => {
-      let nextContext = null;
-      if (painting) nextContext = { paintingSlug: painting.slug, paintingTitle: painting.title };
-      else if (query) nextContext = { query };
-      if (nextContext) setContext(nextContext);
-      setIsOpen(true);
-      if (message) setTimeout(() => send(message, nextContext || undefined), 0);
-    },
-    [send],
-  );
+  const send = useCallback((text) => {
+    const message = String(text || '').trim();
+    if (!message || state.current.pending) return null;
+    setDraft('');
+    return ask(message);
+  }, [ask]);
+
+  const retry = useCallback(() => {
+    if (failed) ask(failed, { addBubble: false });
+  }, [ask, failed]);
+
+  const open = useCallback(({ painting, query } = {}) => {
+    if (painting) {
+      setContext({ paintingSlug: painting.slug, paintingTitle: painting.title });
+      setDraft(`Tell me about ${painting.title}`);
+    } else if (query) {
+      setContext({ query });
+      setDraft(`Help me find ${query}`);
+    }
+    setIsOpen(true);
+  }, []);
+
+  const close = useCallback(({ restoreFocus = true } = {}) => {
+    setIsOpen(false);
+    if (restoreFocus) setTimeout(() => launcherRef.current?.focus(), 0);
+  }, []);
 
   const loadConversation = useCallback(async (id) => {
     const { conversation } = await assistantApi.getConversation(id);
     setConversationId(conversation.id);
     setMessages([WELCOME, ...conversation.messages]);
     setContext({});
+    setFailed(null);
   }, []);
 
   const value = useMemo(
     () => ({
       isOpen,
       open,
-      close: () => setIsOpen(false),
+      close,
       toggle: () => setIsOpen((v) => !v),
+      launcherRef,
       messages,
       send,
+      retry,
       pending,
-      error,
+      error: failed ? CHAT_ERROR : null,
+      draft,
+      setDraft,
       context,
       clearContext: () => setContext({}),
       conversationId,
       loadConversation,
       reset,
+      version,
     }),
-    [isOpen, open, messages, send, pending, error, context, conversationId, loadConversation, reset],
+    [isOpen, open, close, messages, send, retry, pending, failed, draft, context, conversationId, loadConversation, reset, version],
   );
 
   return <ChatContext.Provider value={value}>{children}</ChatContext.Provider>;

@@ -25,9 +25,9 @@ export default function AccountMenu({ tone = 'light', showName = true, align = '
 
   const onLogout = async () => {
     close();
+    await navigate('/');
     await logout();
     toast.info('You are logged out.');
-    navigate('/');
   };
 
   const items = [

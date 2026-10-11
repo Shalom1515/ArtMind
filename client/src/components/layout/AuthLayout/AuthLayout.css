@@ -96,3 +96,17 @@
     padding: var(--space-7) var(--space-7);
   }
 }
+
+.auth-layout__card:has(.page-register) {
+  max-width: 600px;
+}
+
+@media (min-width: 1024px) {
+  .auth-layout__main:has(.page-register) {
+    padding-inline: var(--space-6);
+  }
+
+  .auth-layout__card:has(.page-register) {
+    padding: var(--space-6);
+  }
+}

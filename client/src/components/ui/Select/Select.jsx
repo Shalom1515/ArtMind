@@ -7,6 +7,7 @@ export default function Select({
   label,
   value,
   onChange,
+  onBlur,
   options = [],
   placeholder,
   prefix,
@@ -18,6 +19,7 @@ export default function Select({
   required,
   size = 'md',
   labelStyle,
+  hideLabel = false,
   className,
 }) {
   const autoId = useId();
@@ -28,7 +30,7 @@ export default function Select({
   return (
     <div className={cx('field', 'select', `select--${size}`, className)}>
       {label && (
-        <label htmlFor={selectId} className={cx('field__label', labelStyle === 'caps' && 'field__label--caps')}>
+        <label htmlFor={selectId} className={cx('field__label', labelStyle === 'caps' && 'field__label--caps', hideLabel && 'visually-hidden')}>
           {label}
         </label>
       )}
@@ -43,6 +45,7 @@ export default function Select({
           name={name}
           value={value ?? ''}
           onChange={(e) => onChange?.(e.target.value, e)}
+          onBlur={onBlur}
           disabled={disabled}
           required={required}
           aria-invalid={error ? true : undefined}

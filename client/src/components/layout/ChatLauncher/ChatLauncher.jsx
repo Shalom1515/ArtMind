@@ -4,12 +4,12 @@ import Icon from '../../ui/Icon/Icon.jsx';
 import './ChatLauncher.css';
 
 export default function ChatLauncher() {
-  const { isOpen, open } = useChat();
+  const { isOpen, open, launcherRef } = useChat();
   const { pathname } = useLocation();
-  if (isOpen || pathname.startsWith('/assistant')) return null;
+  if (pathname.startsWith('/assistant')) return null;
 
   return (
-    <button type="button" className="chat-launcher" onClick={() => open()} aria-haspopup="dialog">
+    <button ref={launcherRef} type="button" className="chat-launcher" onClick={() => open()} aria-haspopup="dialog" hidden={isOpen}>
       <Icon name="chat" size={20} />
       <span>Ask ArtMind</span>
     </button>

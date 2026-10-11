@@ -18,6 +18,7 @@ export default function PasswordInput({
   toggle = true,
   className,
   children,
+  ...rest
 }) {
   const autoId = useId();
   const inputId = id || autoId;
@@ -44,6 +45,7 @@ export default function PasswordInput({
           disabled={disabled}
           aria-invalid={error ? true : undefined}
           aria-describedby={error ? `${inputId}-error` : hint ? `${inputId}-hint` : undefined}
+          {...rest}
         />
         {toggle && (
           <button

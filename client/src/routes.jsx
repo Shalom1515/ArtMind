@@ -32,6 +32,7 @@ export function RequireAdmin() {
 export const router = createBrowserRouter([
   {
     element: <App />,
+    hydrateFallbackElement: <Waiting />,
     children: [
       {
         element: <SiteLayout />,

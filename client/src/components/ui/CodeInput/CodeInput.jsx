@@ -1,9 +1,10 @@
-import { useRef } from 'react';
+import { useId, useRef } from 'react';
 import { cx } from '../../../utils/cx.js';
 import './CodeInput.css';
 
 export default function CodeInput({ value = '', onChange, onComplete, length = 6, error, disabled, autoFocus = true, label = 'Verification code', className }) {
   const inputs = useRef([]);
+  const errorId = useId();
   const digits = Array.from({ length }, (_, i) => value[i] || '');
 
   const setValue = (next) => {
@@ -15,8 +16,9 @@ export default function CodeInput({ value = '', onChange, onComplete, length = 6
   const focus = (index) => inputs.current[Math.max(0, Math.min(length - 1, index))]?.focus();
 
   const onInput = (index, event) => {
-    const typed = event.target.value.replace(/\D/g, '');
+    let typed = event.target.value.replace(/\D/g, '');
     if (!typed) return;
+    if (digits[index] && typed.length === 2) typed = typed.startsWith(digits[index]) ? typed[1] : typed[0];
     if (typed.length > 1) {
       setValue(value.slice(0, index) + typed);
       focus(index + typed.length);
@@ -68,6 +70,7 @@ export default function CodeInput({ value = '', onChange, onComplete, length = 6
             autoFocus={autoFocus && index === 0}
             aria-label={`Digit ${index + 1} of ${length}`}
             aria-invalid={error ? true : undefined}
+            aria-describedby={error ? errorId : undefined}
             onChange={(e) => onInput(index, e)}
             onKeyDown={(e) => onKeyDown(index, e)}
             onPaste={onPaste}
@@ -75,7 +78,7 @@ export default function CodeInput({ value = '', onChange, onComplete, length = 6
           />
         ))}
       </div>
-      {error && <p className="field__error code-input__error">{error}</p>}
+      {error && <p id={errorId} className="field__error code-input__error" role="alert">{error}</p>}
     </div>
   );
 }

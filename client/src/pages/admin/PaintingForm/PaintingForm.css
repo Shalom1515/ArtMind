@@ -1,2 +1,146 @@
-.page-admin-paintingform {
+.page-admin-paintingform__back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--colour-ink-soft);
+}
+
+.page-admin-paintingform__back:hover {
+  color: var(--colour-accent);
+}
+
+.page-admin-paintingform__grid {
+  display: grid;
+  gap: var(--space-4);
+  align-items: start;
+}
+
+.page-admin-paintingform__card {
+  min-width: 0;
+  padding: var(--space-4);
+}
+
+.page-admin-paintingform__fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.page-admin-paintingform__fields .field + .field {
+  margin-top: 0;
+}
+
+.page-admin-paintingform__pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.page-admin-paintingform__fields .field__label--caps {
+  color: var(--colour-ink);
+}
+
+.page-admin-paintingform__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.page-admin-paintingform__image .label {
+  margin-bottom: var(--space-3);
+}
+
+.page-admin-paintingform__preview {
+  padding: 6px;
+  background: var(--colour-card);
+  border: var(--border);
+}
+
+.page-admin-paintingform__replace {
+  margin-top: var(--space-3);
+}
+
+.page-admin-paintingform__drop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  width: 100%;
+  min-height: 180px;
+  padding: var(--space-5);
+  border: 1px dashed var(--colour-line-strong);
+  background: var(--colour-card);
+  color: var(--colour-ink);
+  font-size: var(--text-sm);
+}
+
+.page-admin-paintingform__drop:hover {
+  border-color: var(--colour-ink);
+}
+
+.page-admin-paintingform__drop[aria-invalid='true'] {
+  border-color: var(--colour-error);
+}
+
+.page-admin-paintingform__drop-hint {
+  font-size: var(--text-xs);
+  color: var(--colour-muted);
+}
+
+.page-admin-paintingform__image .field__error {
+  margin-top: var(--space-2);
+}
+
+.page-admin-paintingform__generate {
+  margin-top: var(--space-5);
+}
+
+.page-admin-paintingform__hint {
+  margin-top: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--colour-muted);
+}
+
+.page-admin-paintingform__palette-label {
+  margin-top: var(--space-5);
+}
+
+.page-admin-paintingform__palette {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: var(--space-2);
+}
+
+@media (min-width: 640px) {
+  .page-admin-paintingform__card {
+    padding: var(--space-5);
+  }
+
+  .page-admin-paintingform__buttons {
+    flex-direction: row;
+  }
+
+  .page-admin-paintingform__buttons .btn:first-child {
+    flex: 2;
+  }
+
+  .page-admin-paintingform__buttons .btn:last-child {
+    flex: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-admin-paintingform__grid {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  }
+
+  .page-admin-paintingform__fields {
+    order: 1;
+  }
+
+  .page-admin-paintingform__image {
+    order: 2;
+  }
 }

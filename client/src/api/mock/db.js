@@ -138,6 +138,7 @@ export function resetMockData() {
   removeKey(KEY);
   state = freshState();
   save();
+  setSessionId(null);
 }
 
 export const artistBySlug = (slug) => db().artists.find((a) => a.slug === slug);
@@ -145,8 +146,45 @@ export const paintingBySlug = (slug) => db().paintings.find((p) => p.slug === sl
 export const userById = (id) => db().users.find((u) => u.id === id);
 export const userByEmail = (email = '') => db().users.find((u) => u.email === email.trim().toLowerCase());
 
+const SESSION_KEY = 'artmind_mock_session';
+let memorySession = null;
+
+function sessionStores() {
+  try {
+    return typeof window === 'undefined' ? [] : [window.sessionStorage, window.localStorage];
+  } catch {
+    return [];
+  }
+}
+
+export function getSessionId() {
+  for (const store of sessionStores()) {
+    try {
+      const id = store.getItem(SESSION_KEY);
+      if (id) return id;
+    } catch {
+    }
+  }
+  return memorySession;
+}
+
+export function setSessionId(id, remember = false) {
+  memorySession = id || null;
+  const [session, local] = sessionStores();
+  for (const store of [session, local]) {
+    try {
+      store?.removeItem(SESSION_KEY);
+    } catch {
+    }
+  }
+  try {
+    if (id) (remember ? local : session)?.setItem(SESSION_KEY, id);
+  } catch {
+  }
+}
+
 export function currentUser() {
-  const user = userById(db().sessionUserId);
+  const user = userById(getSessionId());
   return user && user.active ? user : null;
 }
 
@@ -167,7 +205,7 @@ export function publicUser(u) {
   if (!u) return null;
   return {
     id: u.id, name: u.name, email: u.email, role: u.role, verified: u.verified, country: u.country,
-    bio: u.bio, avatar: u.avatar, interests: u.interests, joinedAt: u.joinedAt,
+    bio: u.bio, avatar: u.avatar, interests: u.interests, styles: u.styles || [], joinedAt: u.joinedAt,
   };
 }
 
