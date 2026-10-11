@@ -1,10 +1,8 @@
 import { Router } from 'express';
-import { CATEGORIES, COLOUR_GROUPS, MEDIUMS, MOODS, STYLES, SURFACES } from '../config/constants.js';
+import { options } from '../controllers/catalogueController.js';
 
 const router = Router();
 
-router.get('/', (req, res) => {
-  res.json({ categories: CATEGORIES, styles: STYLES, mediums: MEDIUMS, surfaces: SURFACES, moods: MOODS, colours: COLOUR_GROUPS });
-});
+router.get('/', options);
 
 export default router;

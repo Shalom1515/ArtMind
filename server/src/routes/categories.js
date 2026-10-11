@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import { notBuilt } from '../middleware/errors.js';
+import { categories } from '../controllers/catalogueController.js';
 
 const router = Router();
 
-router.get('/', notBuilt);
+router.get('/', categories);
 
 export default router;

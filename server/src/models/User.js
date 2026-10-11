@@ -26,6 +26,7 @@ const userSchema = new mongoose.Schema(
     joinedAt: { type: Date, default: Date.now },
     lastActiveAt: { type: Date, default: Date.now },
     tasteSummary: { type: String, default: '' },
+    tasteVariant: { type: Number, default: 0 },
   },
   { timestamps: true },
 );

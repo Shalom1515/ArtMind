@@ -7,12 +7,16 @@ function limiter(windowMinutes, limit, message) {
     limit,
     standardHeaders: 'draft-7',
     legacyHeaders: false,
-    skip: () => config.isTest,
+    skip: () => config.isTest && !limiterState.inTests,
     handler: (req, res) => res.status(429).json({ error: { message, code: 'RATE_LIMITED' } }),
   });
 }
 
-export const authLimiter = limiter(15, 30, 'Too many attempts. Please wait a few minutes and try again.');
+// Tests turn this on when they want to check a limit.
+export const limiterState = { inTests: false };
+
+export const authLimiter = limiter(15, 20, 'Too many attempts. Please wait a few minutes and try again.');
+export const searchLimiter = limiter(1, 60, 'You are searching very fast. Please wait a moment.');
+export const identifyLimiter = limiter(1, 10, 'Too many images in a short time. Please wait a minute.');
 export const assistantLimiter = limiter(1, 20, 'You are sending messages very fast. Please wait a moment.');
 export const contactLimiter = limiter(60, 5, 'You have sent a lot of messages. Please try again later.');
-export const uploadLimiter = limiter(10, 30, 'Too many uploads. Please wait a few minutes.');
