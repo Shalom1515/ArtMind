@@ -1,2 +1,126 @@
-.page-artists {
+.page-artists__head {
+  display: grid;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.page-artists__count {
+  margin-top: var(--space-1);
+  font-size: var(--text-md);
+  color: var(--colour-ink-soft);
+}
+
+.page-artists__search {
+  position: relative;
+  order: 3;
+}
+
+.page-artists__search-icon {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  color: var(--colour-ink-soft);
+  pointer-events: none;
+}
+
+.page-artists__search-input {
+  padding-left: 42px;
+}
+
+.page-artists__letters {
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  border-bottom: var(--border);
+}
+
+.page-artists__letters ul {
+  display: flex;
+  gap: 2px;
+  width: max-content;
+}
+
+.page-artists__letter {
+  min-width: 30px;
+  min-height: 40px;
+  padding: 0 6px;
+  color: var(--colour-ink-soft);
+  font-size: var(--text-sm);
+  box-shadow: inset 0 -2px 0 transparent;
+}
+
+.page-artists__letter:hover:not(:disabled) {
+  color: var(--colour-accent);
+}
+
+.page-artists__letter--on {
+  color: var(--colour-accent);
+  font-size: var(--text-md);
+  box-shadow: inset 0 -2px 0 var(--colour-accent);
+}
+
+.page-artists__letter:disabled {
+  color: var(--colour-line-strong);
+}
+
+@media (min-width: 1024px) {
+  .page-artists__head {
+    grid-template-columns: minmax(0, 1fr) 260px;
+    align-items: center;
+    row-gap: var(--space-5);
+  }
+
+  .page-artists__search {
+    order: 0;
+  }
+
+  .page-artists__letters {
+    grid-column: 1 / -1;
+    overflow: visible;
+  }
+
+  .page-artists__letters ul {
+    width: auto;
+    justify-content: space-between;
+  }
+}
+
+.page-artists__grid {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.page-artists__grid > li {
+  display: flex;
+}
+
+.page-artists__grid .artist-card {
+  width: 100%;
+}
+
+.page-artists__skeleton {
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+  padding: var(--space-4);
+  border: var(--border);
+}
+
+.page-artists__skeleton .skeleton-text {
+  flex: 1;
+}
+
+@media (min-width: 640px) {
+  .page-artists__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-4);
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-artists__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-5);
+  }
 }
