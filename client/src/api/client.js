@@ -73,20 +73,9 @@ async function mockRequest(method, path, { body, query, as }) {
   return result.status === 204 ? null : result.data;
 }
 
-const ALWAYS_REAL = /^\/auth\//;
-
 export async function request(method, path, options = {}) {
   if (!USE_MOCK) return realRequest(method, path, options);
-  if (!ALWAYS_REAL.test(path)) return mockRequest(method, path, options);
-  const { syncSession } = await mock();
-  try {
-    const data = await realRequest(method, path, options);
-    syncSession(path, data);
-    return data;
-  } catch (error) {
-    if (path === '/auth/me' || path === '/auth/logout') syncSession('/auth/logout', null);
-    throw error;
-  }
+  return mockRequest(method, path, options);
 }
 
 export const get = (path, query, options) => request('GET', path, { ...options, query });

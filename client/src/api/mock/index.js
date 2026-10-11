@@ -2,9 +2,9 @@ import { CATEGORIES, COLOUR_GROUPS, CONTACT_SUBJECTS } from '../../utils/constan
 import { isEmail, passwordProblem } from '../../utils/password.js';
 import { reply, SUGGESTIONS, titleFor } from './assistant.js';
 import {
-  artistBySlug, currentUser, db, faq, fail, MockError, newId, paginate, paintingBySlug, publicUser, requireAdmin,
-  requireUser, resetMockData, save, saveCount, toArtistCard, toCard, toCollectionCard, toPainting, userByEmail,
-  userById, viewCount,
+  artistBySlug, currentUser, db, faq, fail, getSessionId, MockError, newId, paginate, paintingBySlug, publicUser,
+  requireAdmin, requireUser, resetMockData, save, saveCount, setSessionId, toArtistCard, toCard, toCollectionCard, toPainting,
+  userByEmail, userById, viewCount,
 } from './db.js';
 import { jsonBlob, makeDocx, makePdf, paintingBlocks } from './files.js';
 import { colourDistance, readPalette, shrinkToDataUrl } from './images.js';
@@ -105,8 +105,7 @@ route('GET', '/faq', () => ok({ items: faq }));
 export function syncSession(path, data) {
   const state = db();
   if (path === '/auth/logout' || (path === '/auth/me' && !data?.user)) {
-    state.sessionUserId = null;
-    save();
+    setSessionId(null);
     return;
   }
   const remote = data?.user;
@@ -121,9 +120,134 @@ export function syncSession(path, data) {
     name: remote.name, email: remote.email, role: remote.role, verified: remote.verified, country: remote.country || '',
     bio: remote.bio || '', interests: remote.interests || [], joinedAt: remote.joinedAt || local.joinedAt, avatar: remote.avatar ?? local.avatar ?? null,
   });
-  state.sessionUserId = local.id;
   save();
+  setSessionId(local.id);
 }
+
+
+const MOCK_CODE = '123456';
+const MOCK_RESET_TOKEN = 'mocktoken';
+const MINUTE = 60 * 1000;
+
+function sendCode(user) {
+  user.verification = { attempts: 0, lastSentAt: now(), expiresAt: new Date(Date.now() + 15 * MINUTE).toISOString() };
+  save();
+  console.log(`Verification code for ${user.email}: ${MOCK_CODE}`);
+}
+
+route('POST', '/auth/register', ({ body }) => {
+  const name = String(body.name || '').trim();
+  const email = String(body.email || '').trim().toLowerCase();
+  const interests = Array.isArray(body.interests) ? [...new Set(body.interests)] : [];
+  const fields = {};
+  if (name.length < 2 || name.length > 60) fields.name = 'Enter your full name.';
+  if (!isEmail(email)) fields.email = 'Enter a valid email address.';
+  const problem = passwordProblem(body.password || '');
+  if (problem) fields.password = problem;
+  if (interests.length !== 3 || !interests.every((c) => CATEGORIES.includes(c))) fields.interests = 'Pick three categories.';
+  if (body.agree !== true) fields.agree = 'Please agree to the terms and the privacy policy.';
+  if (Object.keys(fields).length) validationError(fields);
+
+  let user = userByEmail(email);
+  if (user?.verified) fail(409, 'An account with that email already exists. Try logging in.', 'CONFLICT', { email: 'This email is already registered.' });
+  if (user) {
+    Object.assign(user, { name, password: body.password, interests });
+  } else {
+    user = {
+      id: newId('u'), name, email, password: body.password, role: 'user', verified: false, active: true, country: '', bio: '',
+      interests, avatar: null, joinedAt: now(), lastActiveAt: now(), tasteSummary: '',
+    };
+    db().users.push(user);
+    db().registrations.push({ userId: user.id, at: user.joinedAt });
+  }
+  sendCode(user);
+  return ok({ email, message: `We sent a six digit code to ${email}.` }, 201);
+});
+
+route('POST', '/auth/verify', ({ body }) => {
+  const user = userByEmail(body.email || '');
+  if (!user) validationError({ code: 'That code is not right.' });
+  if (!user.active) fail(403, 'This account has been deactivated.', 'FORBIDDEN');
+  if (!user.verified) {
+    const v = user.verification || {};
+    if (!v.expiresAt || new Date(v.expiresAt) < new Date()) fail(400, 'That code has expired. Ask for a new one.', 'VALIDATION', { code: 'That code has expired.' });
+    if (v.attempts >= 5) fail(400, 'Too many wrong tries. Ask for a new code.', 'VALIDATION', { code: 'Ask for a new code.' });
+    if (String(body.code || '') !== MOCK_CODE) {
+      v.attempts = (v.attempts || 0) + 1;
+      save();
+      fail(400, 'That code is not right.', 'VALIDATION', { code: 'That code is not right.' });
+    }
+    user.verified = true;
+    delete user.verification;
+  }
+  user.lastActiveAt = now();
+  save();
+  setSessionId(user.id, false);
+  return ok({ user: publicUser(user) });
+});
+
+route('POST', '/auth/resend', ({ body }) => {
+  const user = userByEmail(body.email || '');
+  if (user && !user.verified) {
+    const last = user.verification?.lastSentAt;
+    if (last && Date.now() - new Date(last).getTime() < MINUTE) fail(429, 'Please wait a minute before asking for another code.', 'RATE_LIMITED');
+    sendCode(user);
+  }
+  return ok({ message: 'A new code is on its way.', retryAfter: 60 });
+});
+
+route('POST', '/auth/login', ({ body }) => {
+  const user = userByEmail(body.email || '');
+  if (!user || !user.password || user.password !== body.password) fail(401, 'Email or password is not right.', 'UNAUTHENTICATED');
+  if (!user.active) fail(403, 'This account has been deactivated. Contact us if you think this is a mistake.', 'FORBIDDEN');
+  if (!user.verified) {
+    const expires = user.verification?.expiresAt;
+    if (!expires || new Date(expires) < new Date()) sendCode(user);
+    fail(403, 'Please verify your email first. We sent you a code.', 'NOT_VERIFIED');
+  }
+  user.lastActiveAt = now();
+  save();
+  setSessionId(user.id, Boolean(body.remember));
+  return ok({ user: publicUser(user) });
+});
+
+route('POST', '/auth/logout', () => {
+  setSessionId(null);
+  return ok({ message: 'Logged out.' });
+});
+
+route('POST', '/auth/forgot', ({ body }) => {
+  if (!isEmail(body.email || '')) validationError({ email: 'Enter a valid email address.' });
+  const user = userByEmail(body.email);
+  if (user && user.active) {
+    db().reset = { token: MOCK_RESET_TOKEN, userId: user.id, used: false, expiresAt: new Date(Date.now() + 60 * MINUTE).toISOString() };
+    save();
+    console.log(`Reset link: /reset/${MOCK_RESET_TOKEN}`);
+  }
+  return ok({ message: 'If that email is registered, a reset link is on its way.' });
+});
+
+route('POST', '/auth/reset', ({ body }) => {
+  const entry = db().reset;
+  const valid = entry && body.token === MOCK_RESET_TOKEN && !entry.used && new Date(entry.expiresAt) > new Date();
+  const user = valid ? userById(entry.userId) : null;
+  if (!user) fail(400, 'This reset link has expired or was already used. Ask for a new one.', 'VALIDATION');
+  checkPassword(body.password);
+  user.password = body.password;
+  entry.used = true;
+  save();
+  if (getSessionId() === user.id) setSessionId(null);
+  return ok({ message: 'Your password has been changed. You can log in now.' });
+});
+
+route('GET', '/auth/me', () => {
+  const user = currentUser();
+  if (user) {
+    user.lastActiveAt = now();
+    save();
+  }
+  return ok({ user: publicUser(user) });
+});
 
 
 function categoryTiles() {
@@ -464,6 +588,10 @@ route('PUT', '/me/interests', ({ body }) => {
   const interests = Array.isArray(body.interests) ? body.interests.filter((c) => CATEGORIES.includes(c)) : [];
   if (!interests.length) validationError({ interests: 'Pick at least one category.' });
   user.interests = [...new Set(interests)];
+  if (Array.isArray(body.styles)) {
+    const known = new Set(db().paintings.map((p) => p.style));
+    user.styles = [...new Set(body.styles.filter((style) => known.has(style)))];
+  }
   user.tasteSummary = '';
   save();
   return ok({ user: publicUser(user) });
@@ -510,8 +638,8 @@ route('DELETE', '/me', ({ body }) => {
   state.views = state.views.filter((v) => v.userId !== user.id);
   state.searches = state.searches.filter((s) => s.userId !== user.id);
   state.registrations = state.registrations.filter((r) => r.userId !== user.id);
-  state.sessionUserId = null;
   save();
+  setSessionId(null);
   return noContent();
 });
 

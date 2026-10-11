@@ -1,2 +1,129 @@
-.page-admin-artists {
+.page-admin-artists__who {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.page-admin-artists__name {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--colour-ink);
+}
+
+.page-admin-artists__table {
+  display: none;
+}
+
+.page-admin-artists__cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.page-admin-artists__card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: var(--colour-surface);
+  border: var(--border);
+}
+
+.page-admin-artists__card .skeleton-text {
+  flex: 1;
+}
+
+.page-admin-artists__card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.page-admin-artists__meta {
+  font-size: var(--text-sm);
+  color: var(--colour-muted);
+}
+
+.page-admin-artists__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.page-admin-artists__form .field + .field {
+  margin-top: 0;
+}
+
+.page-admin-artists__form .field__label--caps {
+  color: var(--colour-ochre);
+}
+
+.page-admin-artists__pair {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.page-admin-artists__photo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.page-admin-artists__upload {
+  display: flex;
+  flex: 1 1 200px;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 72px;
+  padding: var(--space-3) var(--space-4);
+  border: var(--border);
+  background: var(--colour-card);
+  text-align: left;
+}
+
+.page-admin-artists__upload:hover {
+  border-color: var(--colour-ink);
+}
+
+.page-admin-artists__upload-title,
+.page-admin-artists__upload-hint {
+  display: block;
+}
+
+.page-admin-artists__upload-title {
+  font-size: var(--text-sm);
+}
+
+.page-admin-artists__upload-hint {
+  font-size: var(--text-xs);
+  color: var(--colour-muted);
+}
+
+.page-admin-artists__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+@media (max-width: 639px) {
+  .page-admin-artists__add {
+    flex: 0 0 auto;
+  }
+}
+
+@media (min-width: 480px) {
+  .page-admin-artists__pair {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .page-admin-artists__table {
+    display: block;
+  }
+
+  .page-admin-artists__cards {
+    display: none;
+  }
 }

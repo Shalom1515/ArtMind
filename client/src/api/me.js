@@ -8,7 +8,7 @@ export function uploadPhoto(file) {
   return post('/me/photo', form);
 }
 
-export const updateInterests = (interests) => put('/me/interests', { interests });
+export const updateInterests = (interests, styles) => put('/me/interests', { interests, styles });
 export const changePassword = ({ currentPassword, newPassword }) => put('/me/password', { currentPassword, newPassword });
 export const signOutOtherDevices = () => del('/me/sessions');
 export const downloadMyData = () => download('/me/export', 'artmind_my_data.json');
