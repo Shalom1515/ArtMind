@@ -1,0 +1,40 @@
+import { Router } from 'express';
+import admin from './admin.js';
+import artists from './artists.js';
+import assistant from './assistant.js';
+import auth from './auth.js';
+import categories from './categories.js';
+import collections from './collections.js';
+import contact from './contact.js';
+import faq from './faq.js';
+import favourites from './favourites.js';
+import health from './health.js';
+import home from './home.js';
+import identify from './identify.js';
+import me from './me.js';
+import options from './options.js';
+import paintings from './paintings.js';
+import recommendations from './recommendations.js';
+import search from './search.js';
+
+const api = Router();
+
+api.use('/health', health);
+api.use('/options', options);
+api.use('/faq', faq);
+api.use('/auth', auth);
+api.use('/home', home);
+api.use('/categories', categories);
+api.use('/paintings', paintings);
+api.use('/artists', artists);
+api.use('/collections', collections);
+api.use('/search', search);
+api.use('/identify', identify);
+api.use('/recommendations', recommendations);
+api.use('/me', me);
+api.use('/favourites', favourites);
+api.use('/assistant', assistant);
+api.use('/contact', contact);
+api.use('/admin', admin);
+
+export default api;

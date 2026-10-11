@@ -1,0 +1,31 @@
+.chat-launcher {
+  position: fixed;
+  right: var(--space-4);
+  bottom: var(--space-4);
+  z-index: var(--z-launcher);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 0 20px 0 16px;
+  border-radius: var(--radius-pill);
+  background: var(--colour-ink);
+  border: 1px solid rgba(237, 230, 218, 0.45);
+  color: var(--colour-page);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  box-shadow: var(--shadow-pop);
+  transition: transform var(--speed) var(--ease), background-color var(--speed) var(--ease);
+}
+
+.chat-launcher:hover {
+  background: #34302c;
+  transform: translateY(-2px);
+}
+
+@media (min-width: 1024px) {
+  .chat-launcher {
+    right: var(--space-6);
+    bottom: var(--space-6);
+  }
+}

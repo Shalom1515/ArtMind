@@ -1,0 +1,62 @@
+.framed {
+  margin: 0;
+  min-width: 0;
+}
+
+.framed__mat {
+  position: relative;
+}
+
+.framed--mat .framed__mat {
+  padding: 6%;
+  background: var(--colour-card);
+  border: var(--border);
+}
+
+.framed--gallery .framed__mat {
+  padding: 3.5%;
+  background: var(--colour-card);
+  border: 1px solid var(--colour-ink);
+  box-shadow: inset 0 0 0 6px var(--colour-card), inset 0 0 0 7px var(--colour-line);
+}
+
+.framed__box {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.framed__box--fallback {
+  aspect-ratio: 4 / 3;
+}
+
+.framed__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 280ms var(--ease);
+}
+
+.framed__box[style*='aspect-ratio'] .framed__img {
+  position: absolute;
+  inset: 0;
+}
+
+.framed__img--cover {
+  object-fit: cover;
+}
+
+.framed__img--contain {
+  object-fit: contain;
+}
+
+.framed__img--in {
+  opacity: 1;
+}
+
+.framed__caption {
+  margin-top: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--colour-muted);
+}

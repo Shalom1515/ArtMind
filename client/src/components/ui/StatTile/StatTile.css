@@ -1,0 +1,36 @@
+.stat-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.stat-tile__value {
+  font-family: var(--font-serif);
+  font-size: var(--text-2xl);
+  line-height: 1;
+  color: var(--colour-ink);
+}
+
+@media (min-width: 1024px) {
+  .stat-tile__value {
+    font-size: var(--text-3xl);
+  }
+}
+
+.stat-tile__label {
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--colour-ink-soft);
+}
+
+.stat-tile--box {
+  padding: var(--space-4) var(--space-5);
+  background: var(--colour-card);
+  border: var(--border);
+}
+
+.stat-tile--band {
+  padding: var(--space-2) var(--space-5);
+}

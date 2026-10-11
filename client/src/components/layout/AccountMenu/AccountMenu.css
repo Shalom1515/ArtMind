@@ -1,0 +1,94 @@
+.account-menu {
+  position: relative;
+}
+
+.account-menu__button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 4px;
+  color: inherit;
+  font-size: var(--text-sm);
+}
+
+.account-menu__button:hover .account-menu__name {
+  color: var(--colour-accent);
+}
+
+.account-menu--dark .account-menu__button {
+  color: var(--colour-dark-text);
+}
+
+.account-menu--dark .account-menu__button:hover .account-menu__name {
+  color: #fff;
+}
+
+.account-menu__list {
+  position: absolute;
+  top: calc(100% + 8px);
+  z-index: var(--z-menu);
+  min-width: 220px;
+  padding: var(--space-2) 0;
+  background: var(--colour-surface);
+  border: var(--border);
+  box-shadow: var(--shadow-pop);
+  animation: account-pop 140ms var(--ease);
+}
+
+.account-menu__list--right {
+  right: 0;
+}
+
+.account-menu__list--left {
+  left: 0;
+}
+
+.account-menu__who {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-2) var(--space-4) var(--space-3);
+  margin-bottom: var(--space-2);
+  border-bottom: var(--border);
+  color: var(--colour-ink);
+}
+
+.account-menu__who strong {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: var(--text-md);
+}
+
+.account-menu__who span {
+  font-size: var(--text-xs);
+  color: var(--colour-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.account-menu__item {
+  display: block;
+  width: 100%;
+  padding: 9px var(--space-4);
+  color: var(--colour-ink);
+  font-size: var(--text-sm);
+  text-align: left;
+}
+
+.account-menu__item:hover,
+.account-menu__item:focus-visible {
+  background: var(--colour-band);
+  outline: none;
+}
+
+.account-menu__item--logout {
+  margin-top: var(--space-2);
+  border-top: var(--border);
+  padding-top: 11px;
+}
+
+@keyframes account-pop {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}

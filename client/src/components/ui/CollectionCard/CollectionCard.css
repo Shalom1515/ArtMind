@@ -1,0 +1,119 @@
+.collection-card {
+  display: flex;
+  background: var(--colour-card);
+  border: var(--border);
+  color: var(--colour-ink);
+  transition: border-color var(--speed) var(--ease);
+  min-width: 0;
+}
+
+a.collection-card:hover {
+  border-color: var(--colour-ink-soft);
+}
+
+a.collection-card:hover .collection-card__title {
+  color: var(--colour-accent);
+}
+
+.collection-card__mosaic {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.collection-card__title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.2;
+  transition: color var(--speed) var(--ease);
+}
+
+.collection-card__line {
+  margin-top: var(--space-2);
+  color: var(--colour-muted);
+}
+
+.collection-card__count {
+  margin-top: var(--space-3);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--colour-muted);
+}
+
+.collection-card__reason {
+  margin-top: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--colour-muted);
+}
+
+.collection-card--mosaic {
+  flex-direction: column;
+  padding: var(--space-4);
+}
+
+.collection-card--mosaic .collection-card__mosaic {
+  padding-bottom: var(--space-4);
+  border-bottom: var(--border);
+  gap: 12px;
+}
+
+.collection-card--mosaic .collection-card__text {
+  padding-top: var(--space-4);
+}
+
+.collection-card--mosaic .collection-card__title {
+  font-size: var(--text-xl);
+}
+
+@media (min-width: 1024px) {
+  .collection-card--mosaic {
+    padding: var(--space-5);
+  }
+}
+
+.collection-card--row {
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-3);
+}
+
+.collection-card--row .collection-card__mosaic {
+  flex: 0 0 46%;
+  gap: 4px;
+}
+
+.collection-card--row .collection-card__title {
+  font-size: var(--text-base);
+}
+
+.collection-card--row .collection-card__count {
+  margin-top: var(--space-1);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.collection-card--strip {
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-3);
+}
+
+.collection-card--strip .collection-card__mosaic {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.collection-card--strip .collection-card__title {
+  font-size: var(--text-md);
+}
+
+@media (min-width: 640px) {
+  .collection-card--strip {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .collection-card--strip .collection-card__mosaic {
+    flex: 0 0 55%;
+  }
+}

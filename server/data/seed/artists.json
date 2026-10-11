@@ -1,0 +1,110 @@
+[
+  {
+    "slug": "adaeze-nwosu",
+    "name": "Adaeze Nwosu",
+    "country": "Nigeria",
+    "bornYear": 1978,
+    "styles": ["Impressionism", "Landscape"],
+    "bio": "Adaeze Nwosu's work captures the beauty and resilience of everyday life in Nigeria, blending tradition with a contemporary voice. She paints rivers, roads and villages in the changing light of morning and evening.\n\nHer impressionist style uses short broken strokes of thick oil, so her landscapes shimmer when you stand close and settle into calm from across the room.",
+    "portrait": "/images/artists/adaeze-nwosu.jpg"
+  },
+  {
+    "slug": "tomas-lindqvist",
+    "name": "Tomas Lindqvist",
+    "country": "Sweden",
+    "bornYear": 1965,
+    "styles": ["Realism", "Watercolour"],
+    "bio": "Tomas Lindqvist is a Swedish painter who works almost only in watercolour. He grew up near the coast and still walks the hills and lakes he paints.\n\nHis realism is quiet and patient. He leaves the white of the paper to do the work of light, which gives his winter scenes and wet hills their fresh feel.",
+    "portrait": "/images/artists/tomas-lindqvist.jpg"
+  },
+  {
+    "slug": "mariam-haddad",
+    "name": "Mariam Haddad",
+    "country": "Lebanon",
+    "bornYear": 1982,
+    "styles": ["Colour field", "Abstract"],
+    "bio": "Mariam Haddad is a Lebanese painter whose colour field paintings are built from a few soft shapes. She often starts a canvas by staining it with one warm ground colour.\n\nShe works slowly, adding thin layers until the colours seem to breathe. Her paintings are made to be looked at for a long time.",
+    "portrait": "/images/artists/mariam-haddad.jpg"
+  },
+  {
+    "slug": "jonas-okafor",
+    "name": "Jonas Okafor",
+    "country": "Nigeria",
+    "bornYear": 1990,
+    "styles": ["Abstract expressionism", "Mixed media"],
+    "bio": "Jonas Okafor is a young Nigerian painter from Lagos who mixes sand and found pigment into his paint. His abstract canvases come from the sounds and movement of the city and the coast.\n\nHe works fast, often scraping back whole layers with a palette knife. The result is a surface full of energy, weather and texture.",
+    "portrait": "/images/artists/jonas-okafor.jpg"
+  },
+  {
+    "slug": "elena-petrova",
+    "name": "Elena Petrova",
+    "country": "Bulgaria",
+    "bornYear": 1958,
+    "styles": ["Still life", "Flowers"],
+    "bio": "Elena Petrova is a Bulgarian painter who has spent most of her life painting flowers. Her still lifes are set on simple tables, in old jars and jugs from her family home.\n\nShe paints in thick oil and likes flowers at every stage, from first bloom to the moment the petals start to fall.",
+    "portrait": "/images/artists/elena-petrova.jpg"
+  },
+  {
+    "slug": "yuki-tanabe",
+    "name": "Yuki Tanabe",
+    "country": "Japan",
+    "bornYear": 1971,
+    "styles": ["Ink wash", "Nature"],
+    "bio": "Yuki Tanabe is a Japanese painter trained in traditional ink wash. She paints terraces, birds, bamboo and blossom with as few strokes as she can.\n\nIn recent years she has also worked in watercolour, bringing the same light touch to koi ponds and wild roses. Empty paper matters to her as much as paint.",
+    "portrait": "/images/artists/yuki-tanabe.jpg"
+  },
+  {
+    "slug": "samuel-adeyemi",
+    "name": "Samuel Adeyemi",
+    "country": "Nigeria",
+    "bornYear": 1984,
+    "styles": ["Realism", "Figurative"],
+    "bio": "Samuel Adeyemi is a Nigerian contemporary artist known for his powerful figurative works that capture the dignity, struggles and beauty of everyday life.\n\nHis art blends realism and expressionism, using rich textures and bold colours to tell stories of culture, identity and resilience.",
+    "portrait": "/images/artists/samuel-adeyemi.jpg"
+  },
+  {
+    "slug": "clara-benedetti",
+    "name": "Clara Benedetti",
+    "country": "Italy",
+    "bornYear": 1969,
+    "styles": ["Pastel", "Figurative"],
+    "bio": "Clara Benedetti is an Italian artist who draws and paints people in quiet moments. Her subjects read, rest, play chess or simply look back at the viewer.\n\nShe works mostly in soft pastel on toned paper, with a few oil paintings each year. Her figures are gentle, honest and full of warm light.",
+    "portrait": "/images/artists/clara-benedetti.jpg"
+  },
+  {
+    "slug": "miguel-serrano",
+    "name": "Miguel Serrano",
+    "country": "Spain",
+    "bornYear": 1952,
+    "styles": ["Renaissance revival", "Religious"],
+    "bio": "Miguel Serrano is a Spanish painter who has spent fifty years learning the methods of the old masters. He grinds his own pigments and lays real gold leaf on wooden panels.\n\nHis religious paintings follow the Renaissance and Baroque traditions, but his faces and gestures come from people he knows in his village.",
+    "portrait": "/images/artists/miguel-serrano.jpg"
+  },
+  {
+    "slug": "ngozi-eze",
+    "name": "Ngozi Eze",
+    "country": "Nigeria",
+    "bornYear": 1975,
+    "styles": ["Contemporary", "Religious"],
+    "bio": "Ngozi Eze is a Nigerian painter whose bright acrylic canvases move between flowers, nature and stories from the Bible. She sets those stories in the red earth hills and gold fields of home.\n\nHer colour is bold and warm, and her brushwork confident. She wants her paintings to feel close and familiar, whatever their subject.",
+    "portrait": "/images/artists/ngozi-eze.jpg"
+  },
+  {
+    "slug": "henrik-vos",
+    "name": "Henrik Vos",
+    "country": "Netherlands",
+    "bornYear": 1960,
+    "styles": ["Realism", "Nature"],
+    "bio": "Henrik Vos is a Dutch painter of harbours, skies and wildlife. He paints outdoors as much as the weather allows, then finishes his canvases in a small studio by the sea.\n\nHis realism is careful but never cold. He is drawn to the moment just before a change, a storm arriving or a heron about to strike.",
+    "portrait": "/images/artists/henrik-vos.jpg"
+  },
+  {
+    "slug": "priya-raman",
+    "name": "Priya Raman",
+    "country": "India",
+    "bornYear": 1987,
+    "styles": ["Gouache", "Abstract"],
+    "bio": "Priya Raman is an Indian artist who works in gouache on paper. Her paintings move between crisp geometric shapes and patterns drawn from folk art and festivals.\n\nShe loves flat colour and clean edges, and she often starts from something she has seen on the street: a doorway, a garland or a leaf in the rain.",
+    "portrait": "/images/artists/priya-raman.jpg"
+  }
+]

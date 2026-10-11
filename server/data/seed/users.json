@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Admin",
+    "email": "admin@artmind.test",
+    "passwordEnv": "SEED_ADMIN_PASSWORD",
+    "role": "admin",
+    "verified": true,
+    "country": "Nigeria",
+    "bio": "",
+    "interests": [],
+    "joinedAt": "2026-09-01T09:00:00.000Z"
+  },
+  {
+    "name": "Ada Okafor",
+    "email": "ada@artmind.test",
+    "passwordEnv": "SEED_USER_PASSWORD",
+    "role": "user",
+    "verified": true,
+    "country": "Nigeria",
+    "bio": "Art lover, curious mind, and a believer in the power of creativity to make life richer.",
+    "interests": ["Landscape", "Flower", "Nature"],
+    "joinedAt": "2026-09-14T10:30:00.000Z"
+  }
+]

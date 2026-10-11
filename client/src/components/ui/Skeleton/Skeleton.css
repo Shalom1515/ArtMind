@@ -1,0 +1,45 @@
+.skeleton {
+  display: block;
+  min-height: 12px;
+  background: linear-gradient(90deg, var(--colour-band) 0%, #f1ebe0 50%, var(--colour-band) 100%);
+  background-size: 200% 100%;
+  animation: skeleton-move 1.4s ease-in-out infinite;
+}
+
+.skeleton--circle {
+  border-radius: 50%;
+}
+
+.skeleton-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skeleton-text .skeleton {
+  height: 12px;
+}
+
+.skeleton-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skeleton-card__image {
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+.skeleton-card__line {
+  height: 11px;
+}
+
+@keyframes skeleton-move {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}

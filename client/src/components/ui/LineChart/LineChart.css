@@ -1,0 +1,63 @@
+.line-chart {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+
+.line-chart svg {
+  display: block;
+  overflow: visible;
+  touch-action: pan-y;
+}
+
+.line-chart__grid {
+  stroke: var(--colour-line);
+  stroke-width: 1;
+}
+
+.line-chart__axis {
+  stroke: var(--colour-line-strong);
+}
+
+.line-chart__tick {
+  fill: var(--colour-muted);
+  font-size: 11px;
+  font-family: var(--font-sans);
+}
+
+.line-chart__line {
+  fill: none;
+  stroke: var(--colour-ink);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.line-chart__cross {
+  stroke: var(--colour-line-strong);
+  stroke-dasharray: 3 3;
+}
+
+.line-chart__dot {
+  fill: var(--colour-ink);
+  stroke: var(--colour-card);
+  stroke-width: 2;
+}
+
+.line-chart__tip {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 6px 10px;
+  background: var(--colour-ink);
+  color: var(--colour-page);
+  font-size: var(--text-xs);
+  line-height: 1.4;
+  white-space: nowrap;
+  pointer-events: none;
+  transform: translate(-50%, -100%);
+}
+
+.line-chart__tip strong {
+  font-size: var(--text-sm);
+}

@@ -1,0 +1,43 @@
+.bar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bar-list__row {
+  display: grid;
+  grid-template-columns: minmax(90px, 38%) 1fr 40px;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 28px;
+  font-size: var(--text-sm);
+}
+
+.bar-list__label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--colour-ink-soft);
+}
+
+.bar-list__track {
+  height: 8px;
+  background: var(--colour-band);
+}
+
+.bar-list__bar {
+  display: block;
+  height: 100%;
+  background: var(--colour-ink);
+  transition: width 400ms var(--ease);
+}
+
+.bar-list__row:hover .bar-list__bar {
+  background: var(--colour-accent);
+}
+
+.bar-list__value {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--colour-ink-soft);
+}

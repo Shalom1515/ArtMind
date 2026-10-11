@@ -1,0 +1,65 @@
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 30px;
+  padding: 4px 14px;
+  border: 1px solid var(--colour-line-strong);
+  background: transparent;
+  color: var(--colour-ink);
+  font-size: var(--text-sm);
+  line-height: 1.2;
+  white-space: nowrap;
+  transition: background-color var(--speed) var(--ease), border-color var(--speed) var(--ease);
+}
+
+.chip--sm {
+  min-height: 26px;
+  padding: 2px 10px;
+  font-size: var(--text-xs);
+}
+
+.chip--tag {
+  border-radius: var(--radius-pill);
+  border-color: var(--colour-ink-soft);
+}
+
+.chip--box {
+  border-color: var(--colour-ink-soft);
+  background: var(--colour-surface);
+}
+
+.chip--solid {
+  background: var(--colour-ink);
+  border-color: var(--colour-ink);
+  color: var(--colour-page);
+}
+
+.chip--soft {
+  background: var(--colour-band);
+  border-color: var(--colour-line-strong);
+}
+
+.chip--action:hover {
+  border-color: var(--colour-ink);
+  background: var(--colour-card);
+}
+
+.chip--solid.chip--action:hover {
+  background: var(--colour-ink-soft);
+}
+
+.chip__remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  margin-right: -4px;
+  color: inherit;
+  opacity: 0.8;
+}
+
+.chip__remove:hover {
+  opacity: 1;
+}

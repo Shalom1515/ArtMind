@@ -1,0 +1,104 @@
+[
+  {
+    "slug": "quiet_landscapes",
+    "title": "Quiet landscapes",
+    "shortLine": "Mist, still water and soft light.",
+    "description": "Mist on the water, frozen lakes and the last light over a village. Eight paintings to slow down with.",
+    "order": 1,
+    "paintings": [
+      "morning-on-the-river",
+      "hills-after-rain",
+      "winter-lake",
+      "village-at-dusk",
+      "harbour-haze",
+      "rice-terraces",
+      "evening-on-the-lagoon",
+      "fog-over-the-valley"
+    ]
+  },
+  {
+    "slug": "colour_and_light",
+    "title": "Colour and light",
+    "shortLine": "Paintings where colour does the talking.",
+    "description": "A red band on ochre, embers in the dark, hibiscus in hard sun and a scarf that glows against a blue wall. Eight paintings led by colour.",
+    "order": 2,
+    "paintings": [
+      "red-interval",
+      "blue-ascension",
+      "ember-field",
+      "hibiscus-at-noon",
+      "marigold-garland",
+      "bougainvillea-wall",
+      "egrets-at-sunset",
+      "girl-in-a-yellow-scarf"
+    ]
+  },
+  {
+    "slug": "faith_and_devotion",
+    "title": "Faith and devotion",
+    "shortLine": "Sacred stories in gold, tempera and acrylic.",
+    "description": "An angel under gold leaf, a stable lit from within and a father welcoming his son home. Eight paintings of faith, old and new.",
+    "order": 3,
+    "paintings": [
+      "annunciation-in-gold",
+      "madonna-of-the-olive-grove",
+      "the-good-shepherd",
+      "pentecost",
+      "saint-francis-and-the-birds",
+      "nativity-at-night",
+      "the-prodigal-son",
+      "jacob-s-ladder"
+    ]
+  },
+  {
+    "slug": "flowers_in_bloom",
+    "title": "Flowers in bloom",
+    "shortLine": "Still lifes, blossoms and gardens.",
+    "description": "Peonies in a chipped jar, a single plum branch and sunflowers just past their best. Eight paintings of flowers in every season.",
+    "order": 4,
+    "paintings": [
+      "peonies-in-a-blue-jar",
+      "white-lilies",
+      "plum-blossom",
+      "hibiscus-at-noon",
+      "sunflowers-going-over",
+      "wild-roses",
+      "lotus-at-dawn",
+      "dahlias-in-september"
+    ]
+  },
+  {
+    "slug": "faces_and_figures",
+    "title": "Faces and figures",
+    "shortLine": "People at work, at rest and at play.",
+    "description": "A drummer in the middle of a beat, a tailor under a bare bulb and a dancer tying her shoe. Eight paintings about people and the lives they lead.",
+    "order": 5,
+    "paintings": [
+      "woman-reading-by-the-window",
+      "the-drummer",
+      "market-woman",
+      "two-sisters",
+      "the-tailor",
+      "dancer-resting",
+      "the-fishermen",
+      "girl-in-a-yellow-scarf"
+    ]
+  },
+  {
+    "slug": "bold_abstraction",
+    "title": "Bold abstraction",
+    "shortLine": "Shape, rhythm and colour without a subject.",
+    "description": "Floating rectangles, folded planes and marks scraped back with a knife. Eight paintings that ask you to look at colour and shape for their own sake.",
+    "order": 6,
+    "paintings": [
+      "quiet-geometry",
+      "tidal-marks",
+      "harmattan",
+      "threshold",
+      "night-market",
+      "cobalt-fold",
+      "ember-field",
+      "small-mercies"
+    ]
+  }
+]

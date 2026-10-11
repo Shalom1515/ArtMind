@@ -1,0 +1,7 @@
+.site-main:focus {
+  outline: none;
+}
+
+.site-main {
+  min-height: 50vh;
+}

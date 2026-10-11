@@ -1,0 +1,2377 @@
+[
+  {
+    "code": "P01",
+    "slug": "quiet-geometry",
+    "title": "Quiet Geometry",
+    "artistSlug": "mariam-haddad",
+    "year": 2019,
+    "category": "Abstract",
+    "style": "Colour field",
+    "medium": "Acrylic",
+    "surface": "Canvas",
+    "widthCm": 60,
+    "heightCm": 90,
+    "orientation": "portrait",
+    "colours": "dusty rose, sand and slate grey",
+    "mood": "Calm",
+    "description": "Soft edged rectangles of dusty rose, sand and slate grey float on a warm ground. The acrylic is thin enough in places to let earlier layers show through.",
+    "summary": "A calm colour field painting where a few soft rectangles seem to drift and settle.",
+    "tags": [
+      "colour field",
+      "rectangles",
+      "dusty rose",
+      "slate grey",
+      "layered",
+      "calm"
+    ],
+    "tones": [
+      "#C9A19B",
+      "#D8C4A2",
+      "#6E767D"
+    ],
+    "colourGroups": [
+      "pink",
+      "cream",
+      "grey"
+    ],
+    "featured": true,
+    "heroOfDay": false,
+    "image": "/images/paintings/quiet-geometry.jpg",
+    "palette": []
+  },
+  {
+    "code": "P02",
+    "slug": "red-interval",
+    "title": "Red Interval",
+    "artistSlug": "mariam-haddad",
+    "year": 2020,
+    "category": "Abstract",
+    "style": "Colour field",
+    "medium": "Acrylic",
+    "surface": "Canvas",
+    "widthCm": 120,
+    "heightCm": 80,
+    "orientation": "landscape",
+    "colours": "deep red on pale ochre",
+    "mood": "Calm",
+    "description": "A single deep red band crosses a pale ochre ground from edge to edge. The band is brushed in many thin layers, so its edges glow and soften.",
+    "summary": "One red band on a pale field, simple and steady.",
+    "tags": [
+      "colour field",
+      "red band",
+      "ochre",
+      "horizontal",
+      "minimal",
+      "calm"
+    ],
+    "tones": [
+      "#8E1F1F",
+      "#D9B676"
+    ],
+    "colourGroups": [
+      "red",
+      "yellow"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/red-interval.jpg",
+    "palette": []
+  },
+  {
+    "code": "P03",
+    "slug": "tidal-marks",
+    "title": "Tidal Marks",
+    "artistSlug": "jonas-okafor",
+    "year": 2021,
+    "category": "Abstract",
+    "style": "Abstract expressionism",
+    "medium": "Mixed media",
+    "surface": "Canvas",
+    "widthCm": 120,
+    "heightCm": 80,
+    "orientation": "landscape",
+    "colours": "charcoal, indigo and wet sand",
+    "mood": "Energetic",
+    "description": "Sweeping strokes rise and fall across the canvas like waves on a shore. Real sand mixed into the paint gives the surface the rough feel of a wet beach.",
+    "summary": "An energetic abstract of waves and sand in charcoal and indigo.",
+    "tags": [
+      "abstract expressionism",
+      "waves",
+      "sand",
+      "indigo",
+      "texture",
+      "energetic"
+    ],
+    "tones": [
+      "#2E2E33",
+      "#2F3D6B",
+      "#BFA782"
+    ],
+    "colourGroups": [
+      "black",
+      "blue",
+      "brown"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/tidal-marks.jpg",
+    "palette": []
+  },
+  {
+    "code": "P04",
+    "slug": "harmattan",
+    "title": "Harmattan",
+    "artistSlug": "jonas-okafor",
+    "year": 2018,
+    "category": "Abstract",
+    "style": "Abstract expressionism",
+    "medium": "Acrylic",
+    "surface": "Canvas",
+    "widthCm": 80,
+    "heightCm": 120,
+    "orientation": "portrait",
+    "colours": "dusty orange, grey and bone white",
+    "mood": "Dramatic",
+    "description": "Veils of dusty orange and grey are scraped back with a palette knife. The painting recalls the dry season haze when dust hangs in the air.",
+    "summary": "A dramatic abstract of dust and light in the harmattan season.",
+    "tags": [
+      "abstract expressionism",
+      "harmattan",
+      "dust",
+      "palette knife",
+      "orange",
+      "dramatic"
+    ],
+    "tones": [
+      "#C97B45",
+      "#9A948C",
+      "#EDE6D8"
+    ],
+    "colourGroups": [
+      "orange",
+      "grey",
+      "cream"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/harmattan.jpg",
+    "palette": []
+  },
+  {
+    "code": "P05",
+    "slug": "blue-ascension",
+    "title": "Blue Ascension",
+    "artistSlug": "mariam-haddad",
+    "year": 2022,
+    "category": "Abstract",
+    "style": "Colour field",
+    "medium": "Oil",
+    "surface": "Linen",
+    "widthCm": 60,
+    "heightCm": 90,
+    "orientation": "portrait",
+    "colours": "deep navy rising to pale sky blue",
+    "mood": "Calm",
+    "description": "Soft vertical bands of blue grow lighter from deep navy to pale sky blue. The thick oil paint keeps every brush mark visible.",
+    "summary": "A calm painting where blue slowly lifts into light.",
+    "tags": [
+      "colour field",
+      "blue",
+      "gradient",
+      "vertical bands",
+      "oil",
+      "calm"
+    ],
+    "tones": [
+      "#1C2B4F",
+      "#5D82B8",
+      "#C9DCEC"
+    ],
+    "colourGroups": [
+      "blue",
+      "cream"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/blue-ascension.jpg",
+    "palette": []
+  },
+  {
+    "code": "P06",
+    "slug": "threshold",
+    "title": "Threshold",
+    "artistSlug": "priya-raman",
+    "year": 2021,
+    "category": "Abstract",
+    "style": "Geometric abstraction",
+    "medium": "Gouache",
+    "surface": "Paper",
+    "widthCm": 40,
+    "heightCm": 60,
+    "orientation": "portrait",
+    "colours": "mustard, teal and cream",
+    "mood": "Calm",
+    "description": "A simple doorway is built from flat blocks of mustard, teal and cream. The crisp gouache edges make the shape feel quiet and exact.",
+    "summary": "A calm geometric painting of a doorway made from flat colour.",
+    "tags": [
+      "geometric abstraction",
+      "doorway",
+      "mustard",
+      "teal",
+      "gouache",
+      "calm"
+    ],
+    "tones": [
+      "#C99A2E",
+      "#2F7C7A",
+      "#EFE5CF"
+    ],
+    "colourGroups": [
+      "yellow",
+      "teal",
+      "cream"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/threshold.jpg",
+    "palette": []
+  },
+  {
+    "code": "P07",
+    "slug": "night-market",
+    "title": "Night Market",
+    "artistSlug": "jonas-okafor",
+    "year": 2020,
+    "category": "Abstract",
+    "style": "Abstract expressionism",
+    "medium": "Mixed media",
+    "surface": "Board",
+    "widthCm": 80,
+    "heightCm": 80,
+    "orientation": "square",
+    "colours": "near black with flashes of yellow and magenta",
+    "mood": "Energetic",
+    "description": "Dense dark marks are broken by sudden flashes of yellow and magenta. It feels like walking through a crowded market at night, lit by small lamps.",
+    "summary": "An energetic abstract of lamps and movement in a night market.",
+    "tags": [
+      "abstract expressionism",
+      "night",
+      "market",
+      "lamps",
+      "magenta",
+      "energetic"
+    ],
+    "tones": [
+      "#141317",
+      "#E3C23A",
+      "#B3317A"
+    ],
+    "colourGroups": [
+      "black",
+      "yellow",
+      "pink"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/night-market.jpg",
+    "palette": []
+  },
+  {
+    "code": "P08",
+    "slug": "cobalt-fold",
+    "title": "Cobalt Fold",
+    "artistSlug": "priya-raman",
+    "year": 2019,
+    "category": "Abstract",
+    "style": "Geometric abstraction",
+    "medium": "Gouache",
+    "surface": "Paper",
+    "widthCm": 50,
+    "heightCm": 50,
+    "orientation": "square",
+    "colours": "cobalt blue and chalk white",
+    "mood": "Calm",
+    "description": "Crisp planes of cobalt blue and chalk white fold into each other like a creased sheet of paper. The flat gouache gives every facet a clean edge.",
+    "summary": "A calm geometric study of folded blue planes.",
+    "tags": [
+      "geometric abstraction",
+      "cobalt blue",
+      "folds",
+      "facets",
+      "gouache",
+      "calm"
+    ],
+    "tones": [
+      "#1F4AA8",
+      "#F2F0EA"
+    ],
+    "colourGroups": [
+      "blue",
+      "cream"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/cobalt-fold.jpg",
+    "palette": []
+  },
+  {
+    "code": "P09",
+    "slug": "ember-field",
+    "title": "Ember Field",
+    "artistSlug": "jonas-okafor",
+    "year": 2022,
+    "category": "Abstract",
+    "style": "Abstract expressionism",
+    "medium": "Oil",
+    "surface": "Canvas",
+    "widthCm": 120,
+    "heightCm": 80,
+    "orientation": "landscape",
+    "colours": "glowing orange and red over black",
+    "mood": "Dramatic",
+    "description": "Small glowing flecks of orange and red are scattered across a black field. Up close the thick oil paint stands out from the surface like real embers.",
+    "summary": "A dramatic abstract of embers glowing in the dark.",
+    "tags": [
+      "abstract expressionism",
+      "embers",
+      "fire",
+      "black",
+      "orange",
+      "dramatic"
+    ],
+    "tones": [
+      "#0F0D0C",
+      "#E0661F",
+      "#A3261B"
+    ],
+    "colourGroups": [
+      "black",
+      "orange",
+      "red"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/ember-field.jpg",
+    "palette": []
+  },
+  {
+    "code": "P10",
+    "slug": "small-mercies",
+    "title": "Small Mercies",
+    "artistSlug": "mariam-haddad",
+    "year": 2023,
+    "category": "Abstract",
+    "style": "Colour field",
+    "medium": "Oil",
+    "surface": "Linen",
+    "widthCm": 60,
+    "heightCm": 60,
+    "orientation": "square",
+    "colours": "sage green, blush pink and cream",
+    "mood": "Tender",
+    "description": "Three soft edged squares of sage green, blush pink and cream are stacked loosely on a pale ground. The oil is brushed on in slow, gentle layers.",
+    "summary": "A tender colour field of three stacked squares.",
+    "tags": [
+      "colour field",
+      "squares",
+      "sage green",
+      "blush pink",
+      "oil",
+      "tender"
+    ],
+    "tones": [
+      "#9DAE8E",
+      "#E2B5AE",
+      "#F0E6D2"
+    ],
+    "colourGroups": [
+      "green",
+      "pink",
+      "cream"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/small-mercies.jpg",
+    "palette": []
+  },
+  {
+    "code": "P11",
+    "slug": "morning-on-the-river",
+    "title": "Morning on the River",
+    "artistSlug": "adaeze-nwosu",
+    "year": 2016,
+    "category": "Landscape",
+    "style": "Impressionism",
+    "medium": "Oil",
+    "surface": "Canvas",
+    "widthCm": 90,
+    "heightCm": 60,
+    "orientation": "landscape",
+    "colours": "soft greens, silver and pale gold",
+    "mood": "Calm",
+    "description": "A peaceful morning on the river, with mist rising above the water and soft sunlight filtering through the willows. Short broken strokes catch the silver and gold of the early light.",
+    "summary": "This painting captures the quiet beauty of a morning on the river, with soft light, mist and reflections creating a sense of calm and peace.",
+    "tags": [
+      "river",
+      "dawn",
+      "mist",
+      "willows",
+      "calm",
+      "soft light"
+    ],
+    "tones": [
+      "#5C7A6B",
+      "#A7B8A0",
+      "#D9C9A3"
+    ],
+    "colourGroups": [
+      "green",
+      "grey",
+      "yellow"
+    ],
+    "featured": false,
+    "heroOfDay": true,
+    "image": "/images/paintings/morning-on-the-river.jpg",
+    "palette": []
+  },
+  {
+    "code": "P12",
+    "slug": "hills-after-rain",
+    "title": "Hills After Rain",
+    "artistSlug": "tomas-lindqvist",
+    "year": 2019,
+    "category": "Landscape",
+    "style": "Realism",
+    "medium": "Watercolour",
+    "surface": "Paper",
+    "widthCm": 60,
+    "heightCm": 40,
+    "orientation": "landscape",
+    "colours": "fresh greens and soft greys",
+    "mood": "Calm",
+    "description": "Rolling green hills lie under grey clouds that are just starting to clear. Soft watercolour washes let the white of the paper show through as light.",
+    "summary": "A calm landscape of hills and clearing skies after rain.",
+    "tags": [
+      "hills",
+      "rain",
+      "clouds",
+      "watercolour",
+      "green",
+      "calm"
+    ],
+    "tones": [
+      "#7FA35B",
+      "#A9ADB0",
+      "#E8E6DD"
+    ],
+    "colourGroups": [
+      "green",
+      "grey"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/hills-after-rain.jpg",
+    "palette": []
+  },
+  {
+    "code": "P13",
+    "slug": "the-long-road-home",
+    "title": "The Long Road Home",
+    "artistSlug": "adaeze-nwosu",
+    "year": 2018,
+    "category": "Landscape",
+    "style": "Impressionism",
+    "medium": "Oil",
+    "surface": "Canvas",
+    "widthCm": 120,
+    "heightCm": 80,
+    "orientation": "landscape",
+    "colours": "warm orange, red earth and violet",
+    "mood": "Tender",
+    "description": "A red earth road runs between tall grass towards a low evening sun. Warm orange and violet strokes make the whole scene glow.",
+    "summary": "A tender landscape of a red earth road at sunset.",
+    "tags": [
+      "road",
+      "red earth",
+      "sunset",
+      "tall grass",
+      "violet",
+      "tender"
+    ],
+    "tones": [
+      "#D9822B",
+      "#9C3E26",
+      "#7D5C8C"
+    ],
+    "colourGroups": [
+      "orange",
+      "red",
+      "violet"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/the-long-road-home.jpg",
+    "palette": []
+  },
+  {
+    "code": "P14",
+    "slug": "winter-lake",
+    "title": "Winter Lake",
+    "artistSlug": "tomas-lindqvist",
+    "year": 2017,
+    "category": "Landscape",
+    "style": "Realism",
+    "medium": "Watercolour",
+    "surface": "Paper",
+    "widthCm": 60,
+    "heightCm": 40,
+    "orientation": "landscape",
+    "colours": "pale blue, white and grey",
+    "mood": "Calm",
+    "description": "A frozen lake lies still beneath bare birch trees and a low winter sun. Pale blue and grey washes keep the scene cold and quiet.",
+    "summary": "A calm winter scene of ice, birches and low sun.",
+    "tags": [
+      "winter",
+      "frozen lake",
+      "birch trees",
+      "snow",
+      "watercolour",
+      "calm"
+    ],
+    "tones": [
+      "#B9CEDD",
+      "#F3F3F0",
+      "#9A9FA3"
+    ],
+    "colourGroups": [
+      "blue",
+      "cream",
+      "grey"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/winter-lake.jpg",
+    "palette": []
+  },
+  {
+    "code": "P15",
+    "slug": "village-at-dusk",
+    "title": "Village at Dusk",
+    "artistSlug": "adaeze-nwosu",
+    "year": 2020,
+    "category": "Landscape",
+    "style": "Impressionism",
+    "medium": "Oil",
+    "surface": "Canvas",
+    "widthCm": 90,
+    "heightCm": 60,
+    "orientation": "landscape",
+    "colours": "warm roof tones against blue shadow",
+    "mood": "Calm",
+    "description": "Tin roofs catch the last warm light while blue shadows gather between the houses. The thick oil strokes give the village a gentle, settled feeling.",
+    "summary": "A calm village scene at the end of the day.",
+    "tags": [
+      "village",
+      "dusk",
+      "tin roofs",
+      "blue shadow",
+      "oil",
+      "calm"
+    ],
+    "tones": [
+      "#C98A4B",
+      "#3F5B85",
+      "#E2B77A"
+    ],
+    "colourGroups": [
+      "orange",
+      "blue",
+      "yellow"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/village-at-dusk.jpg",
+    "palette": []
+  },
+  {
+    "code": "P16",
+    "slug": "harbour-haze",
+    "title": "Harbour Haze",
+    "artistSlug": "henrik-vos",
+    "year": 2015,
+    "category": "Landscape",
+    "style": "Realism",
+    "medium": "Oil",
+    "surface": "Linen",
+    "widthCm": 90,
+    "heightCm": 60,
+    "orientation": "landscape",
+    "colours": "muted greys with small touches of red",
+    "mood": "Calm",
+    "description": "Fishing boats rest in a hazy harbour under the noon light. Muted greys fill the scene, with small touches of red on the hulls.",
+    "summary": "A calm harbour scene in soft grey haze.",
+    "tags": [
+      "harbour",
+      "boats",
+      "haze",
+      "grey",
+      "sea",
+      "calm"
+    ],
+    "tones": [
+      "#9C9E9B",
+      "#6E757A",
+      "#A2382C"
+    ],
+    "colourGroups": [
+      "grey",
+      "red"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/harbour-haze.jpg",
+    "palette": []
+  },
+  {
+    "code": "P17",
+    "slug": "rice-terraces",
+    "title": "Rice Terraces",
+    "artistSlug": "yuki-tanabe",
+    "year": 2019,
+    "category": "Landscape",
+    "style": "Ink wash",
+    "medium": "Ink",
+    "surface": "Paper",
+    "widthCm": 40,
+    "heightCm": 60,
+    "orientation": "portrait",
+    "colours": "grey ink washes on white paper",
+    "mood": "Calm",
+    "description": "Stepped rice terraces curve down a hillside in layers of grey ink. Each wash is lighter than the one before, so the hill seems to fade into the distance.",
+    "summary": "A calm ink landscape of terraced fields.",
+    "tags": [
+      "rice terraces",
+      "hillside",
+      "ink wash",
+      "grey",
+      "layers",
+      "calm"
+    ],
+    "tones": [
+      "#5B5B5B",
+      "#A6A6A2",
+      "#F1EFEA"
+    ],
+    "colourGroups": [
+      "grey",
+      "cream"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/rice-terraces.jpg",
+    "palette": []
+  },
+  {
+    "code": "P18",
+    "slug": "evening-on-the-lagoon",
+    "title": "Evening on the Lagoon",
+    "artistSlug": "adaeze-nwosu",
+    "year": 2019,
+    "category": "Landscape",
+    "style": "Impressionism",
+    "medium": "Oil",
+    "surface": "Canvas",
+    "widthCm": 90,
+    "heightCm": 60,
+    "orientation": "landscape",
+    "colours": "orange sky reflected in still water with dark canoes",
+    "mood": "Calm",
+    "description": "Two dark canoes rest on a still lagoon that mirrors the orange evening sky. The reflections are painted in short, broken strokes of thick oil.",
+    "summary": "A calm lagoon at sunset, with canoes and their reflections.",
+    "tags": [
+      "lagoon",
+      "canoes",
+      "sunset",
+      "reflections",
+      "orange sky",
+      "calm"
+    ],
+    "tones": [
+      "#E08A3C",
+      "#2B2A2E",
+      "#C9A27A"
+    ],
+    "colourGroups": [
+      "orange",
+      "black"
+    ],
+    "featured": true,
+    "heroOfDay": false,
+    "image": "/images/paintings/evening-on-the-lagoon.jpg",
+    "palette": []
+  },
+  {
+    "code": "P19",
+    "slug": "storm-coming",
+    "title": "Storm Coming",
+    "artistSlug": "henrik-vos",
+    "year": 2020,
+    "category": "Landscape",
+    "style": "Realism",
+    "medium": "Oil",
+    "surface": "Linen",
+    "widthCm": 120,
+    "heightCm": 80,
+    "orientation": "landscape",
+    "colours": "dark slate clouds over a single strip of gold light",
+    "mood": "Dramatic",
+    "description": "A wall of dark slate cloud moves over flat farmland. One strip of field is still lit in gold before the storm arrives.",
+    "summary": "A dramatic landscape of a storm about to break.",
+    "tags": [
+      "storm",
+      "clouds",
+      "farmland",
+      "gold light",
+      "realism",
+      "dramatic"
+    ],
+    "tones": [
+      "#3D4651",
+      "#C9A13E",
+      "#6F7A5A"
+    ],
+    "colourGroups": [
+      "grey",
+      "yellow",
+      "green"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/storm-coming.jpg",
+    "palette": []
+  },
+  {
+    "code": "P20",
+    "slug": "fog-over-the-valley",
+    "title": "Fog Over the Valley",
+    "artistSlug": "yuki-tanabe",
+    "year": 2021,
+    "category": "Landscape",
+    "style": "Ink wash",
+    "medium": "Ink",
+    "surface": "Paper",
+    "widthCm": 60,
+    "heightCm": 40,
+    "orientation": "landscape",
+    "colours": "layered greys fading into white",
+    "mood": "Calm",
+    "description": "Mountain ridges fade one behind the other into white mist. The layered grey washes leave large areas of the paper almost empty.",
+    "summary": "A calm ink painting of ridges disappearing into fog.",
+    "tags": [
+      "fog",
+      "valley",
+      "mountains",
+      "mist",
+      "ink wash",
+      "calm"
+    ],
+    "tones": [
+      "#6B6D6E",
+      "#B8B9B6",
+      "#F4F2EE"
+    ],
+    "colourGroups": [
+      "grey",
+      "cream"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/fog-over-the-valley.jpg",
+    "palette": []
+  },
+  {
+    "code": "P21",
+    "slug": "peonies-in-a-blue-jar",
+    "title": "Peonies in a Blue Jar",
+    "artistSlug": "elena-petrova",
+    "year": 2015,
+    "category": "Flower",
+    "style": "Still life",
+    "medium": "Oil",
+    "surface": "Canvas",
+    "widthCm": 60,
+    "heightCm": 90,
+    "orientation": "portrait",
+    "colours": "rich pinks, a chipped cobalt jar and warm wood",
+    "mood": "Joyful",
+    "description": "Heavy pink peonies spill from a chipped blue jar on a wooden table. Thick oil paint gives the petals real weight and softness.",
+    "summary": "A joyful still life of peonies in a cobalt jar.",
+    "tags": [
+      "peonies",
+      "flowers",
+      "blue jar",
+      "still life",
+      "pink",
+      "joyful"
+    ],
+    "tones": [
+      "#D9849A",
+      "#2F4E9A",
+      "#8A5A35"
+    ],
+    "colourGroups": [
+      "pink",
+      "blue",
+      "brown"
+    ],
+    "featured": true,
+    "heroOfDay": false,
+    "image": "/images/paintings/peonies-in-a-blue-jar.jpg",
+    "palette": []
+  },
+  {
+    "code": "P22",
+    "slug": "white-lilies",
+    "title": "White Lilies",
+    "artistSlug": "elena-petrova",
+    "year": 2018,
+    "category": "Flower",
+    "style": "Still life",
+    "medium": "Oil",
+    "surface": "Canvas",
+    "widthCm": 40,
+    "heightCm": 60,
+    "orientation": "portrait",
+    "colours": "white flowers against deep olive",
+    "mood": "Tender",
+    "description": "Three white lilies stand against a dark olive background. The dark ground makes the petals seem to glow.",
+    "summary": "A tender still life of white lilies on olive.",
+    "tags": [
+      "lilies",
+      "white flowers",
+      "olive",
+      "still life",
+      "oil",
+      "tender"
+    ],
+    "tones": [
+      "#F2EFE6",
+      "#4E5530",
+      "#7D8456"
+    ],
+    "colourGroups": [
+      "cream",
+      "green"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/white-lilies.jpg",
+    "palette": []
+  },
+  {
+    "code": "P23",
+    "slug": "plum-blossom",
+    "title": "Plum Blossom",
+    "artistSlug": "yuki-tanabe",
+    "year": 2017,
+    "category": "Flower",
+    "style": "Ink wash",
+    "medium": "Ink",
+    "surface": "Paper",
+    "widthCm": 40,
+    "heightCm": 60,
+    "orientation": "portrait",
+    "colours": "grey ink with small touches of pink",
+    "mood": "Tender",
+    "description": "A single branch of plum blossom reaches across the paper. Grey ink forms the branch, with small touches of pink for the flowers.",
+    "summary": "A tender ink painting of one blossoming branch.",
+    "tags": [
+      "plum blossom",
+      "branch",
+      "ink wash",
+      "pink",
+      "spring",
+      "tender"
+    ],
+    "tones": [
+      "#4F4C4A",
+      "#E3A9B4",
+      "#F3EFE8"
+    ],
+    "colourGroups": [
+      "grey",
+      "pink",
+      "cream"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/plum-blossom.jpg",
+    "palette": []
+  },
+  {
+    "code": "P24",
+    "slug": "hibiscus-at-noon",
+    "title": "Hibiscus at Noon",
+    "artistSlug": "ngozi-eze",
+    "year": 2020,
+    "category": "Flower",
+    "style": "Contemporary",
+    "medium": "Acrylic",
+    "surface": "Canvas",
+    "widthCm": 80,
+    "heightCm": 80,
+    "orientation": "square",
+    "colours": "bright red flowers and deep green leaves in hard sunlight",
+    "mood": "Joyful",
+    "description": "Red hibiscus flowers fill the whole canvas in hard midday sunlight. Deep green leaves push the reds even brighter.",
+    "summary": "A joyful close view of hibiscus in strong sun.",
+    "tags": [
+      "hibiscus",
+      "red flowers",
+      "sunlight",
+      "leaves",
+      "acrylic",
+      "joyful"
+    ],
+    "tones": [
+      "#D0242A",
+      "#1F5A32",
+      "#F2C14E"
+    ],
+    "colourGroups": [
+      "red",
+      "green"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/hibiscus-at-noon.jpg",
+    "palette": []
+  },
+  {
+    "code": "P25",
+    "slug": "sunflowers-going-over",
+    "title": "Sunflowers Going Over",
+    "artistSlug": "elena-petrova",
+    "year": 2019,
+    "category": "Flower",
+    "style": "Still life",
+    "medium": "Oil",
+    "surface": "Canvas",
+    "widthCm": 60,
+    "heightCm": 90,
+    "orientation": "portrait",
+    "colours": "browning yellows and warm ochre",
+    "mood": "Melancholic",
+    "description": "Drooping sunflowers lean out of a tin jug, their petals starting to brown. Warm ochre tones give the scene a late summer sadness.",
+    "summary": "A melancholic still life of sunflowers past their best.",
+    "tags": [
+      "sunflowers",
+      "tin jug",
+      "still life",
+      "ochre",
+      "late summer",
+      "melancholic"
+    ],
+    "tones": [
+      "#C9962E",
+      "#8A5A2B",
+      "#A8A39A"
+    ],
+    "colourGroups": [
+      "yellow",
+      "brown"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/sunflowers-going-over.jpg",
+    "palette": []
+  },
+  {
+    "code": "P26",
+    "slug": "wild-roses",
+    "title": "Wild Roses",
+    "artistSlug": "yuki-tanabe",
+    "year": 2019,
+    "category": "Flower",
+    "style": "Impressionism",
+    "medium": "Watercolour",
+    "surface": "Paper",
+    "widthCm": 40,
+    "heightCm": 60,
+    "orientation": "portrait",
+    "colours": "pale pinks and soft greens with white paper showing",
+    "mood": "Tender",
+    "description": "Pale wild roses open on a thorny stem. Soft pink and green washes leave much of the white paper showing.",
+    "summary": "A tender watercolour of wild roses.",
+    "tags": [
+      "wild roses",
+      "flowers",
+      "watercolour",
+      "pink",
+      "soft green",
+      "tender"
+    ],
+    "tones": [
+      "#EBC1C6",
+      "#9DB58C",
+      "#F7F4EE"
+    ],
+    "colourGroups": [
+      "pink",
+      "green",
+      "cream"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/wild-roses.jpg",
+    "palette": []
+  },
+  {
+    "code": "P27",
+    "slug": "lotus-at-dawn",
+    "title": "Lotus at Dawn",
+    "artistSlug": "yuki-tanabe",
+    "year": 2021,
+    "category": "Flower",
+    "style": "Ink wash",
+    "medium": "Ink",
+    "surface": "Paper",
+    "widthCm": 50,
+    "heightCm": 50,
+    "orientation": "square",
+    "colours": "grey ink washes with a blush of pink",
+    "mood": "Calm",
+    "description": "A lotus opens above dark still water. Grey ink washes carry a faint blush of pink in the petals.",
+    "summary": "A calm ink painting of a lotus at first light.",
+    "tags": [
+      "lotus",
+      "water",
+      "dawn",
+      "ink wash",
+      "pink",
+      "calm"
+    ],
+    "tones": [
+      "#2F3132",
+      "#E6B8BE",
+      "#B5B3AE"
+    ],
+    "colourGroups": [
+      "black",
+      "pink",
+      "grey"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/lotus-at-dawn.jpg",
+    "palette": []
+  },
+  {
+    "code": "P28",
+    "slug": "marigold-garland",
+    "title": "Marigold Garland",
+    "artistSlug": "priya-raman",
+    "year": 2020,
+    "category": "Flower",
+    "style": "Folk",
+    "medium": "Gouache",
+    "surface": "Paper",
+    "widthCm": 60,
+    "heightCm": 40,
+    "orientation": "landscape",
+    "colours": "bright orange and gold on cream",
+    "mood": "Joyful",
+    "description": "A garland of orange marigolds loops across a cream ground. Flat gouache colour and crisp edges give it the feel of a festival decoration.",
+    "summary": "A joyful folk painting of a marigold garland.",
+    "tags": [
+      "marigolds",
+      "garland",
+      "folk",
+      "orange",
+      "festival",
+      "joyful"
+    ],
+    "tones": [
+      "#EE8A1E",
+      "#D8A92C",
+      "#F2E8D0"
+    ],
+    "colourGroups": [
+      "orange",
+      "yellow",
+      "cream"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/marigold-garland.jpg",
+    "palette": []
+  },
+  {
+    "code": "P29",
+    "slug": "bougainvillea-wall",
+    "title": "Bougainvillea Wall",
+    "artistSlug": "ngozi-eze",
+    "year": 2019,
+    "category": "Flower",
+    "style": "Contemporary",
+    "medium": "Acrylic",
+    "surface": "Canvas",
+    "widthCm": 90,
+    "heightCm": 60,
+    "orientation": "landscape",
+    "colours": "magenta flowers, white wall and a hot sky",
+    "mood": "Joyful",
+    "description": "Magenta bougainvillea spills over a sunlit white wall under a hot sky. The acrylic is laid on in bold, confident strokes.",
+    "summary": "A joyful painting of bougainvillea in bright sun.",
+    "tags": [
+      "bougainvillea",
+      "magenta",
+      "white wall",
+      "sunlight",
+      "acrylic",
+      "joyful"
+    ],
+    "tones": [
+      "#C2257D",
+      "#F4F1EA",
+      "#4A90C8"
+    ],
+    "colourGroups": [
+      "pink",
+      "cream",
+      "blue"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/bougainvillea-wall.jpg",
+    "palette": []
+  },
+  {
+    "code": "P30",
+    "slug": "dahlias-in-september",
+    "title": "Dahlias in September",
+    "artistSlug": "elena-petrova",
+    "year": 2021,
+    "category": "Flower",
+    "style": "Still life",
+    "medium": "Oil",
+    "surface": "Canvas",
+    "widthCm": 60,
+    "heightCm": 90,
+    "orientation": "portrait",
+    "colours": "dark red and coral against stoneware grey",
+    "mood": "Tender",
+    "description": "Dark red and coral dahlias crowd a stoneware vase. The grey of the vase cools the rich warm petals.",
+    "summary": "A tender still life of dahlias at the end of summer.",
+    "tags": [
+      "dahlias",
+      "flowers",
+      "stoneware vase",
+      "still life",
+      "coral",
+      "tender"
+    ],
+    "tones": [
+      "#8E2027",
+      "#E2735E",
+      "#8F8C86"
+    ],
+    "colourGroups": [
+      "red",
+      "orange",
+      "grey"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/dahlias-in-september.jpg",
+    "palette": []
+  },
+  {
+    "code": "P31",
+    "slug": "heron-in-the-reeds",
+    "title": "Heron in the Reeds",
+    "artistSlug": "henrik-vos",
+    "year": 2016,
+    "category": "Nature",
+    "style": "Realism",
+    "medium": "Oil",
+    "surface": "Linen",
+    "widthCm": 60,
+    "heightCm": 90,
+    "orientation": "portrait",
+    "colours": "grey blues and reed greens",
+    "mood": "Calm",
+    "description": "A grey heron stands perfectly still among tall reeds at the water's edge. Cool grey blues and reed greens keep the whole scene hushed.",
+    "summary": "A calm study of a heron waiting in the reeds.",
+    "tags": [
+      "heron",
+      "bird",
+      "reeds",
+      "water",
+      "realism",
+      "calm"
+    ],
+    "tones": [
+      "#7D8D9A",
+      "#7F8A52",
+      "#C2B48A"
+    ],
+    "colourGroups": [
+      "grey",
+      "green"
+    ],
+    "featured": true,
+    "heroOfDay": false,
+    "image": "/images/paintings/heron-in-the-reeds.jpg",
+    "palette": []
+  },
+  {
+    "code": "P32",
+    "slug": "monsoon-leaves",
+    "title": "Monsoon Leaves",
+    "artistSlug": "priya-raman",
+    "year": 2019,
+    "category": "Nature",
+    "style": "Contemporary",
+    "medium": "Gouache",
+    "surface": "Paper",
+    "widthCm": 40,
+    "heightCm": 60,
+    "orientation": "portrait",
+    "colours": "deep greens with bright rain drops",
+    "mood": "Joyful",
+    "description": "Huge wet banana leaves fill the paper as rain runs down them. Bright drops stand out against the deep greens.",
+    "summary": "A joyful painting of leaves in monsoon rain.",
+    "tags": [
+      "monsoon",
+      "banana leaves",
+      "rain",
+      "green",
+      "gouache",
+      "joyful"
+    ],
+    "tones": [
+      "#1F5B34",
+      "#4C8C3F",
+      "#D9EFE4"
+    ],
+    "colourGroups": [
+      "green",
+      "teal"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/monsoon-leaves.jpg",
+    "palette": []
+  },
+  {
+    "code": "P33",
+    "slug": "forest-floor",
+    "title": "Forest Floor",
+    "artistSlug": "henrik-vos",
+    "year": 2018,
+    "category": "Nature",
+    "style": "Realism",
+    "medium": "Oil",
+    "surface": "Linen",
+    "widthCm": 90,
+    "heightCm": 60,
+    "orientation": "landscape",
+    "colours": "moss green, rust and dappled gold",
+    "mood": "Calm",
+    "description": "Moss, ferns and fallen leaves cover a forest floor in dappled light. Rust and gold sit among the soft moss greens.",
+    "summary": "A calm close view of the forest floor.",
+    "tags": [
+      "forest",
+      "moss",
+      "ferns",
+      "fallen leaves",
+      "dappled light",
+      "calm"
+    ],
+    "tones": [
+      "#5E7A3A",
+      "#A4552A",
+      "#D1A84A"
+    ],
+    "colourGroups": [
+      "green",
+      "brown",
+      "yellow"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/forest-floor.jpg",
+    "palette": []
+  },
+  {
+    "code": "P34",
+    "slug": "koi-pond",
+    "title": "Koi Pond",
+    "artistSlug": "yuki-tanabe",
+    "year": 2020,
+    "category": "Nature",
+    "style": "Impressionism",
+    "medium": "Watercolour",
+    "surface": "Paper",
+    "widthCm": 50,
+    "heightCm": 50,
+    "orientation": "square",
+    "colours": "orange and white fish under green lily pads",
+    "mood": "Calm",
+    "description": "Orange and white koi glide under green lily pads. Loose watercolour washes make the water seem to move.",
+    "summary": "A calm watercolour of koi under lily pads.",
+    "tags": [
+      "koi",
+      "pond",
+      "lily pads",
+      "fish",
+      "watercolour",
+      "calm"
+    ],
+    "tones": [
+      "#E46F2A",
+      "#3F6B3A",
+      "#F3EFE6"
+    ],
+    "colourGroups": [
+      "orange",
+      "green",
+      "cream"
+    ],
+    "featured": true,
+    "heroOfDay": false,
+    "image": "/images/paintings/koi-pond.jpg",
+    "palette": []
+  },
+  {
+    "code": "P35",
+    "slug": "baobab-at-noon",
+    "title": "Baobab at Noon",
+    "artistSlug": "adaeze-nwosu",
+    "year": 2019,
+    "category": "Nature",
+    "style": "Impressionism",
+    "medium": "Oil",
+    "surface": "Canvas",
+    "widthCm": 80,
+    "heightCm": 120,
+    "orientation": "portrait",
+    "colours": "bleached ochre and a pale hot sky",
+    "mood": "Solemn",
+    "description": "A massive baobab trunk with sparse branches stands in white midday heat. Bleached ochre and a pale hot sky give it a solemn stillness.",
+    "summary": "A solemn portrait of a baobab in the noon heat.",
+    "tags": [
+      "baobab",
+      "tree",
+      "midday",
+      "heat",
+      "ochre",
+      "solemn"
+    ],
+    "tones": [
+      "#C8A46A",
+      "#EDE3CC",
+      "#8C6E4A"
+    ],
+    "colourGroups": [
+      "yellow",
+      "cream",
+      "brown"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/baobab-at-noon.jpg",
+    "palette": []
+  },
+  {
+    "code": "P36",
+    "slug": "mangrove-roots",
+    "title": "Mangrove Roots",
+    "artistSlug": "ngozi-eze",
+    "year": 2017,
+    "category": "Nature",
+    "style": "Contemporary",
+    "medium": "Acrylic",
+    "surface": "Canvas",
+    "widthCm": 90,
+    "heightCm": 60,
+    "orientation": "landscape",
+    "colours": "dark greens and black water with green reflections",
+    "mood": "Dramatic",
+    "description": "Tangled mangrove roots twist over dark water. Green reflections break up the black surface below.",
+    "summary": "A dramatic painting of mangrove roots and dark water.",
+    "tags": [
+      "mangrove",
+      "roots",
+      "dark water",
+      "reflections",
+      "green",
+      "dramatic"
+    ],
+    "tones": [
+      "#1E3A28",
+      "#0F1412",
+      "#4F7D4A"
+    ],
+    "colourGroups": [
+      "green",
+      "black"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/mangrove-roots.jpg",
+    "palette": []
+  },
+  {
+    "code": "P37",
+    "slug": "bamboo-after-rain",
+    "title": "Bamboo After Rain",
+    "artistSlug": "yuki-tanabe",
+    "year": 2018,
+    "category": "Nature",
+    "style": "Ink wash",
+    "medium": "Ink",
+    "surface": "Paper",
+    "widthCm": 40,
+    "heightCm": 60,
+    "orientation": "portrait",
+    "colours": "layered grey ink",
+    "mood": "Calm",
+    "description": "Tall bamboo stems and leaves drip after a passing rain. The grey ink is layered from pale to dark to give depth.",
+    "summary": "A calm ink painting of bamboo after rain.",
+    "tags": [
+      "bamboo",
+      "rain",
+      "leaves",
+      "ink wash",
+      "grey",
+      "calm"
+    ],
+    "tones": [
+      "#3E3F3D",
+      "#8E918C",
+      "#EEECE6"
+    ],
+    "colourGroups": [
+      "grey",
+      "cream"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/bamboo-after-rain.jpg",
+    "palette": []
+  },
+  {
+    "code": "P38",
+    "slug": "egrets-at-sunset",
+    "title": "Egrets at Sunset",
+    "artistSlug": "adaeze-nwosu",
+    "year": 2021,
+    "category": "Nature",
+    "style": "Impressionism",
+    "medium": "Oil",
+    "surface": "Canvas",
+    "widthCm": 90,
+    "heightCm": 60,
+    "orientation": "landscape",
+    "colours": "white birds over a pink and gold lagoon",
+    "mood": "Joyful",
+    "description": "White egrets lift off a pink and gold lagoon as the sun goes down. Quick strokes of thick oil catch the movement of their wings.",
+    "summary": "A joyful scene of egrets taking flight at sunset.",
+    "tags": [
+      "egrets",
+      "birds",
+      "lagoon",
+      "sunset",
+      "pink",
+      "joyful"
+    ],
+    "tones": [
+      "#E8A3A0",
+      "#D9A846",
+      "#F5F2EC"
+    ],
+    "colourGroups": [
+      "pink",
+      "yellow",
+      "cream"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/egrets-at-sunset.jpg",
+    "palette": []
+  },
+  {
+    "code": "P39",
+    "slug": "mountain-stream",
+    "title": "Mountain Stream",
+    "artistSlug": "tomas-lindqvist",
+    "year": 2019,
+    "category": "Nature",
+    "style": "Realism",
+    "medium": "Watercolour",
+    "surface": "Paper",
+    "widthCm": 40,
+    "heightCm": 60,
+    "orientation": "portrait",
+    "colours": "white water, grey stone and dark pine green",
+    "mood": "Energetic",
+    "description": "White water tumbles over grey boulders between dark pines. The paper is left bare for the foam, which makes it sparkle.",
+    "summary": "An energetic watercolour of a rushing mountain stream.",
+    "tags": [
+      "mountain stream",
+      "water",
+      "boulders",
+      "pine trees",
+      "watercolour",
+      "energetic"
+    ],
+    "tones": [
+      "#F4F4F1",
+      "#8B8E8F",
+      "#2E4A35"
+    ],
+    "colourGroups": [
+      "cream",
+      "grey",
+      "green"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/mountain-stream.jpg",
+    "palette": []
+  },
+  {
+    "code": "P40",
+    "slug": "cranes-in-snow",
+    "title": "Cranes in Snow",
+    "artistSlug": "yuki-tanabe",
+    "year": 2019,
+    "category": "Nature",
+    "style": "Ink wash",
+    "medium": "Ink",
+    "surface": "Paper",
+    "widthCm": 50,
+    "heightCm": 50,
+    "orientation": "square",
+    "colours": "white paper, grey ink and a touch of red on the heads of the cranes",
+    "mood": "Tender",
+    "description": "Two cranes stand together in falling snow. Grey ink and white paper do most of the work, with a touch of red on each head.",
+    "summary": "A tender ink painting of two cranes in the snow.",
+    "tags": [
+      "cranes",
+      "birds",
+      "snow",
+      "ink wash",
+      "winter",
+      "tender"
+    ],
+    "tones": [
+      "#F2F1EE",
+      "#6C6C6A",
+      "#B3262B"
+    ],
+    "colourGroups": [
+      "cream",
+      "grey",
+      "red"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/cranes-in-snow.jpg",
+    "palette": []
+  },
+  {
+    "code": "P41",
+    "slug": "woman-reading-by-the-window",
+    "title": "Woman Reading by the Window",
+    "artistSlug": "clara-benedetti",
+    "year": 2016,
+    "category": "Figurative",
+    "style": "Realism",
+    "medium": "Pastel",
+    "surface": "Paper",
+    "widthCm": 40,
+    "heightCm": 60,
+    "orientation": "portrait",
+    "colours": "soft greys and warm window light",
+    "mood": "Calm",
+    "description": "A woman in a grey dress reads a book by a window. Warm light falls across the page and her hands.",
+    "summary": "A calm interior of a woman lost in a book.",
+    "tags": [
+      "woman",
+      "reading",
+      "window",
+      "interior",
+      "pastel",
+      "calm"
+    ],
+    "tones": [
+      "#9A958E",
+      "#E5C892",
+      "#6F625A"
+    ],
+    "colourGroups": [
+      "grey",
+      "yellow",
+      "brown"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/woman-reading-by-the-window.jpg",
+    "palette": []
+  },
+  {
+    "code": "P42",
+    "slug": "the-drummer",
+    "title": "The Drummer",
+    "artistSlug": "samuel-adeyemi",
+    "year": 2019,
+    "category": "Figurative",
+    "style": "Expressionism",
+    "medium": "Oil",
+    "surface": "Canvas",
+    "widthCm": 80,
+    "heightCm": 120,
+    "orientation": "portrait",
+    "colours": "warm ochre and black",
+    "mood": "Energetic",
+    "description": "A drummer is caught in the middle of a beat, his hands blurred with movement. Warm ochre and black strokes carry the rhythm across the canvas.",
+    "summary": "An energetic figure painting full of rhythm and sound.",
+    "tags": [
+      "drummer",
+      "music",
+      "rhythm",
+      "movement",
+      "ochre",
+      "energetic"
+    ],
+    "tones": [
+      "#C98F34",
+      "#1C1A18",
+      "#8C3B22"
+    ],
+    "colourGroups": [
+      "yellow",
+      "black",
+      "brown"
+    ],
+    "featured": true,
+    "heroOfDay": false,
+    "image": "/images/paintings/the-drummer.jpg",
+    "palette": []
+  },
+  {
+    "code": "P43",
+    "slug": "market-woman",
+    "title": "Market Woman",
+    "artistSlug": "samuel-adeyemi",
+    "year": 2017,
+    "category": "Figurative",
+    "style": "Realism",
+    "medium": "Charcoal",
+    "surface": "Paper",
+    "widthCm": 40,
+    "heightCm": 60,
+    "orientation": "portrait",
+    "colours": "charcoal greys on warm paper",
+    "mood": "Solemn",
+    "description": "A seated market woman in a head wrap looks straight at the viewer. Charcoal lines and smudges on warm paper give her face strength and calm.",
+    "summary": "A solemn charcoal portrait of a market woman.",
+    "tags": [
+      "market woman",
+      "head wrap",
+      "portrait",
+      "charcoal",
+      "drawing",
+      "solemn"
+    ],
+    "tones": [
+      "#3A3633",
+      "#8C8580",
+      "#E3D3B8"
+    ],
+    "colourGroups": [
+      "black",
+      "grey",
+      "cream"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/market-woman.jpg",
+    "palette": []
+  },
+  {
+    "code": "P44",
+    "slug": "two-sisters",
+    "title": "Two Sisters",
+    "artistSlug": "clara-benedetti",
+    "year": 2018,
+    "category": "Figurative",
+    "style": "Realism",
+    "medium": "Pastel",
+    "surface": "Paper",
+    "widthCm": 60,
+    "heightCm": 40,
+    "orientation": "landscape",
+    "colours": "white dresses against soft green and rose",
+    "mood": "Tender",
+    "description": "Two girls in white dresses sit on a garden bench, one looking away. Soft green and rose pastel surround them like a summer afternoon.",
+    "summary": "A tender pastel of two sisters in a garden.",
+    "tags": [
+      "sisters",
+      "girls",
+      "garden",
+      "white dresses",
+      "pastel",
+      "tender"
+    ],
+    "tones": [
+      "#F1EEE6",
+      "#9DB28B",
+      "#D9A3A3"
+    ],
+    "colourGroups": [
+      "cream",
+      "green",
+      "pink"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/two-sisters.jpg",
+    "palette": []
+  },
+  {
+    "code": "P45",
+    "slug": "the-tailor",
+    "title": "The Tailor",
+    "artistSlug": "samuel-adeyemi",
+    "year": 2020,
+    "category": "Figurative",
+    "style": "Realism",
+    "medium": "Oil",
+    "surface": "Canvas",
+    "widthCm": 60,
+    "heightCm": 90,
+    "orientation": "portrait",
+    "colours": "warm lamplight and deep brown shadow",
+    "mood": "Calm",
+    "description": "An old tailor bends over his sewing machine under a bare bulb. Warm lamplight meets deep brown shadow all around him.",
+    "summary": "A calm portrait of a tailor at work.",
+    "tags": [
+      "tailor",
+      "sewing machine",
+      "work",
+      "lamplight",
+      "oil",
+      "calm"
+    ],
+    "tones": [
+      "#E2B060",
+      "#4A3020",
+      "#8C5B34"
+    ],
+    "colourGroups": [
+      "yellow",
+      "brown"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/the-tailor.jpg",
+    "palette": []
+  },
+  {
+    "code": "P46",
+    "slug": "dancer-resting",
+    "title": "Dancer Resting",
+    "artistSlug": "clara-benedetti",
+    "year": 2019,
+    "category": "Figurative",
+    "style": "Impressionism",
+    "medium": "Pastel",
+    "surface": "Paper",
+    "widthCm": 40,
+    "heightCm": 60,
+    "orientation": "portrait",
+    "colours": "pale pinks and greys",
+    "mood": "Tender",
+    "description": "A young dancer ties her shoe in a quiet rehearsal room. Pale pinks and greys give the moment a soft, private feel.",
+    "summary": "A tender pastel of a dancer taking a short rest.",
+    "tags": [
+      "dancer",
+      "ballet",
+      "rehearsal",
+      "pink",
+      "pastel",
+      "tender"
+    ],
+    "tones": [
+      "#E7C3C3",
+      "#A9A6A3",
+      "#C79A72"
+    ],
+    "colourGroups": [
+      "pink",
+      "grey",
+      "brown"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/dancer-resting.jpg",
+    "palette": []
+  },
+  {
+    "code": "P47",
+    "slug": "the-fishermen",
+    "title": "The Fishermen",
+    "artistSlug": "samuel-adeyemi",
+    "year": 2021,
+    "category": "Figurative",
+    "style": "Realism",
+    "medium": "Oil",
+    "surface": "Canvas",
+    "widthCm": 120,
+    "heightCm": 80,
+    "orientation": "landscape",
+    "colours": "dawn greys, wet browns and a pale gold sky",
+    "mood": "Dramatic",
+    "description": "Three fishermen haul a heavy net out of the sea at dawn. Wet browns and dawn greys sit under a pale gold sky.",
+    "summary": "A dramatic scene of fishermen at work in the early light.",
+    "tags": [
+      "fishermen",
+      "net",
+      "sea",
+      "dawn",
+      "work",
+      "dramatic"
+    ],
+    "tones": [
+      "#8E8F8C",
+      "#6A4A30",
+      "#E2C88A"
+    ],
+    "colourGroups": [
+      "grey",
+      "brown",
+      "yellow"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/the-fishermen.jpg",
+    "palette": []
+  },
+  {
+    "code": "P48",
+    "slug": "self-portrait-in-grey",
+    "title": "Self Portrait in Grey",
+    "artistSlug": "clara-benedetti",
+    "year": 2021,
+    "category": "Figurative",
+    "style": "Realism",
+    "medium": "Oil",
+    "surface": "Linen",
+    "widthCm": 40,
+    "heightCm": 60,
+    "orientation": "portrait",
+    "colours": "greys with one warm highlight on the cheek",
+    "mood": "Melancholic",
+    "description": "A woman looks frankly out of the canvas in a self portrait painted almost entirely in greys. One warm highlight on the cheek brings the face to life.",
+    "summary": "A melancholic self portrait in shades of grey.",
+    "tags": [
+      "self portrait",
+      "woman",
+      "grey",
+      "face",
+      "oil",
+      "melancholic"
+    ],
+    "tones": [
+      "#6E6C69",
+      "#A9A6A1",
+      "#D7A486"
+    ],
+    "colourGroups": [
+      "grey"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/self-portrait-in-grey.jpg",
+    "palette": []
+  },
+  {
+    "code": "P49",
+    "slug": "girl-in-a-yellow-scarf",
+    "title": "Girl in a Yellow Scarf",
+    "artistSlug": "samuel-adeyemi",
+    "year": 2019,
+    "category": "Figurative",
+    "style": "Expressionism",
+    "medium": "Oil",
+    "surface": "Canvas",
+    "widthCm": 60,
+    "heightCm": 90,
+    "orientation": "portrait",
+    "colours": "bright yellow against deep blue",
+    "mood": "Joyful",
+    "description": "A young woman in a bright yellow scarf stands against a deep blue wall. The strong contrast makes the yellow almost shine.",
+    "summary": "A joyful portrait in bright yellow and deep blue.",
+    "tags": [
+      "portrait",
+      "young woman",
+      "yellow scarf",
+      "blue",
+      "expressionism",
+      "joyful"
+    ],
+    "tones": [
+      "#E8B21E",
+      "#1D3570",
+      "#7A4A2B"
+    ],
+    "colourGroups": [
+      "yellow",
+      "blue"
+    ],
+    "featured": true,
+    "heroOfDay": false,
+    "image": "/images/paintings/girl-in-a-yellow-scarf.jpg",
+    "palette": []
+  },
+  {
+    "code": "P50",
+    "slug": "the-chess-players",
+    "title": "The Chess Players",
+    "artistSlug": "clara-benedetti",
+    "year": 2020,
+    "category": "Figurative",
+    "style": "Realism",
+    "medium": "Oil",
+    "surface": "Linen",
+    "widthCm": 90,
+    "heightCm": 60,
+    "orientation": "landscape",
+    "colours": "warm cafe browns and afternoon light",
+    "mood": "Calm",
+    "description": "Two old men bend over a chessboard in a cafe. Warm browns and afternoon light fill the room.",
+    "summary": "A calm scene of a slow game of chess.",
+    "tags": [
+      "chess",
+      "cafe",
+      "old men",
+      "game",
+      "afternoon light",
+      "calm"
+    ],
+    "tones": [
+      "#7A5233",
+      "#D9B07A",
+      "#3D2C22"
+    ],
+    "colourGroups": [
+      "brown",
+      "yellow"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/the-chess-players.jpg",
+    "palette": []
+  },
+  {
+    "code": "P51",
+    "slug": "annunciation-in-gold",
+    "title": "Annunciation in Gold",
+    "artistSlug": "miguel-serrano",
+    "year": 2014,
+    "category": "Religious",
+    "style": "Renaissance revival",
+    "medium": "Tempera",
+    "surface": "Wood panel",
+    "widthCm": 60,
+    "heightCm": 90,
+    "orientation": "portrait",
+    "colours": "gold leaf, lapis blue and soft rose",
+    "mood": "Solemn",
+    "description": "An angel kneels before a young woman in a small room under a gold leaf sky. Fine tempera brushwork and a slightly cracked surface give it the feel of an old panel.",
+    "summary": "A solemn panel painting of the Annunciation in gold and lapis.",
+    "tags": [
+      "annunciation",
+      "angel",
+      "gold leaf",
+      "tempera",
+      "lapis blue",
+      "solemn"
+    ],
+    "tones": [
+      "#C99A3A",
+      "#26408B",
+      "#D9A3A0"
+    ],
+    "colourGroups": [
+      "yellow",
+      "blue",
+      "pink"
+    ],
+    "featured": true,
+    "heroOfDay": false,
+    "image": "/images/paintings/annunciation-in-gold.jpg",
+    "palette": []
+  },
+  {
+    "code": "P52",
+    "slug": "madonna-of-the-olive-grove",
+    "title": "Madonna of the Olive Grove",
+    "artistSlug": "miguel-serrano",
+    "year": 2016,
+    "category": "Religious",
+    "style": "Renaissance revival",
+    "medium": "Tempera",
+    "surface": "Wood panel",
+    "widthCm": 40,
+    "heightCm": 60,
+    "orientation": "portrait",
+    "colours": "silver olive greens, soft blue and gold",
+    "mood": "Tender",
+    "description": "A mother holds her child, seated under silver olive trees. Soft blue and touches of gold glow through the cracked panel.",
+    "summary": "A tender panel painting of mother and child in an olive grove.",
+    "tags": [
+      "madonna",
+      "mother and child",
+      "olive trees",
+      "tempera",
+      "gold",
+      "tender"
+    ],
+    "tones": [
+      "#8E9A7A",
+      "#6C86B0",
+      "#C9A24A"
+    ],
+    "colourGroups": [
+      "green",
+      "blue",
+      "yellow"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/madonna-of-the-olive-grove.jpg",
+    "palette": []
+  },
+  {
+    "code": "P53",
+    "slug": "the-good-shepherd",
+    "title": "The Good Shepherd",
+    "artistSlug": "ngozi-eze",
+    "year": 2019,
+    "category": "Religious",
+    "style": "Contemporary",
+    "medium": "Acrylic",
+    "surface": "Canvas",
+    "widthCm": 60,
+    "heightCm": 90,
+    "orientation": "portrait",
+    "colours": "red earth hills and a dusk sky",
+    "mood": "Tender",
+    "description": "A shepherd carries a lamb across red earth hills at dusk. The warm hills and fading sky make the journey feel gentle and safe.",
+    "summary": "A tender painting of a shepherd carrying a lamb home.",
+    "tags": [
+      "shepherd",
+      "lamb",
+      "red earth",
+      "hills",
+      "dusk",
+      "tender"
+    ],
+    "tones": [
+      "#A3452B",
+      "#E59A5C",
+      "#5C4A78"
+    ],
+    "colourGroups": [
+      "red",
+      "orange",
+      "violet"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/the-good-shepherd.jpg",
+    "palette": []
+  },
+  {
+    "code": "P54",
+    "slug": "pentecost",
+    "title": "Pentecost",
+    "artistSlug": "ngozi-eze",
+    "year": 2020,
+    "category": "Religious",
+    "style": "Contemporary",
+    "medium": "Acrylic",
+    "surface": "Canvas",
+    "widthCm": 120,
+    "heightCm": 80,
+    "orientation": "landscape",
+    "colours": "deep shadow with small bright flames",
+    "mood": "Dramatic",
+    "description": "A gathering of people sits in a dark room with small flames above their heads. The bright flames cut sharply through the deep shadow.",
+    "summary": "A dramatic painting of the flames of Pentecost.",
+    "tags": [
+      "pentecost",
+      "flames",
+      "gathering",
+      "shadow",
+      "acrylic",
+      "dramatic"
+    ],
+    "tones": [
+      "#15120F",
+      "#E89A2C",
+      "#7A3A1E"
+    ],
+    "colourGroups": [
+      "black",
+      "orange",
+      "brown"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/pentecost.jpg",
+    "palette": []
+  },
+  {
+    "code": "P55",
+    "slug": "saint-francis-and-the-birds",
+    "title": "Saint Francis and the Birds",
+    "artistSlug": "miguel-serrano",
+    "year": 2018,
+    "category": "Religious",
+    "style": "Renaissance revival",
+    "medium": "Oil",
+    "surface": "Wood panel",
+    "widthCm": 60,
+    "heightCm": 90,
+    "orientation": "portrait",
+    "colours": "soft browns, a pale sky and small dark birds",
+    "mood": "Calm",
+    "description": "A robed friar stands on a hillside speaking to a flock of small birds. Soft browns and a pale sky keep the scene quiet.",
+    "summary": "A calm panel painting of Saint Francis with the birds.",
+    "tags": [
+      "saint francis",
+      "birds",
+      "friar",
+      "hillside",
+      "wood panel",
+      "calm"
+    ],
+    "tones": [
+      "#7A5A3C",
+      "#D9D3C2",
+      "#3A332D"
+    ],
+    "colourGroups": [
+      "brown",
+      "cream"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/saint-francis-and-the-birds.jpg",
+    "palette": []
+  },
+  {
+    "code": "P56",
+    "slug": "nativity-at-night",
+    "title": "Nativity at Night",
+    "artistSlug": "miguel-serrano",
+    "year": 2017,
+    "category": "Religious",
+    "style": "Baroque revival",
+    "medium": "Oil",
+    "surface": "Linen",
+    "widthCm": 90,
+    "heightCm": 60,
+    "orientation": "landscape",
+    "colours": "deep darkness with warm light from the child",
+    "mood": "Solemn",
+    "description": "A stable at night is lit only by the light around a newborn child. Deep darkness surrounds the warm glow at the centre.",
+    "summary": "A solemn nativity lit from within.",
+    "tags": [
+      "nativity",
+      "stable",
+      "night",
+      "warm glow",
+      "baroque",
+      "solemn"
+    ],
+    "tones": [
+      "#141110",
+      "#E3B062",
+      "#6A3A22"
+    ],
+    "colourGroups": [
+      "black",
+      "yellow",
+      "brown"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/nativity-at-night.jpg",
+    "palette": []
+  },
+  {
+    "code": "P57",
+    "slug": "the-prodigal-son",
+    "title": "The Prodigal Son",
+    "artistSlug": "ngozi-eze",
+    "year": 2018,
+    "category": "Religious",
+    "style": "Contemporary",
+    "medium": "Acrylic",
+    "surface": "Canvas",
+    "widthCm": 60,
+    "heightCm": 90,
+    "orientation": "portrait",
+    "colours": "warm browns and dusty gold",
+    "mood": "Tender",
+    "description": "A father embraces his kneeling son at a gate. Warm browns and dusty gold give the reunion a soft glow.",
+    "summary": "A tender painting of the prodigal son coming home.",
+    "tags": [
+      "prodigal son",
+      "father",
+      "embrace",
+      "gate",
+      "gold",
+      "tender"
+    ],
+    "tones": [
+      "#7B5434",
+      "#C9A45C",
+      "#4A3A2E"
+    ],
+    "colourGroups": [
+      "brown",
+      "yellow"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/the-prodigal-son.jpg",
+    "palette": []
+  },
+  {
+    "code": "P58",
+    "slug": "the-flight-into-egypt",
+    "title": "The Flight into Egypt",
+    "artistSlug": "miguel-serrano",
+    "year": 2020,
+    "category": "Religious",
+    "style": "Renaissance revival",
+    "medium": "Tempera",
+    "surface": "Wood panel",
+    "widthCm": 60,
+    "heightCm": 40,
+    "orientation": "landscape",
+    "colours": "pale desert sand and dawn rose under gold",
+    "mood": "Calm",
+    "description": "A family on a donkey crosses a pale desert at dawn. Sand and dawn rose sit under a sky touched with gold.",
+    "summary": "A calm panel painting of the journey into Egypt.",
+    "tags": [
+      "flight into egypt",
+      "desert",
+      "donkey",
+      "dawn",
+      "tempera",
+      "calm"
+    ],
+    "tones": [
+      "#E2CFA8",
+      "#D9A3A0",
+      "#C9A24A"
+    ],
+    "colourGroups": [
+      "cream",
+      "pink",
+      "yellow"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/the-flight-into-egypt.jpg",
+    "palette": []
+  },
+  {
+    "code": "P59",
+    "slug": "ruth-in-the-field",
+    "title": "Ruth in the Field",
+    "artistSlug": "ngozi-eze",
+    "year": 2019,
+    "category": "Religious",
+    "style": "Contemporary",
+    "medium": "Acrylic",
+    "surface": "Canvas",
+    "widthCm": 90,
+    "heightCm": 60,
+    "orientation": "landscape",
+    "colours": "gold barley under a soft evening sky",
+    "mood": "Calm",
+    "description": "A woman gathers barley in a gold field at evening. The soft sky and warm field make the work look peaceful.",
+    "summary": "A calm painting of Ruth gathering barley.",
+    "tags": [
+      "ruth",
+      "barley",
+      "field",
+      "evening",
+      "gold",
+      "calm"
+    ],
+    "tones": [
+      "#D9B24A",
+      "#E9C9A0",
+      "#8DA3B8"
+    ],
+    "colourGroups": [
+      "yellow",
+      "cream",
+      "blue"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/ruth-in-the-field.jpg",
+    "palette": []
+  },
+  {
+    "code": "P60",
+    "slug": "jacob-s-ladder",
+    "title": "Jacob's Ladder",
+    "artistSlug": "miguel-serrano",
+    "year": 2019,
+    "category": "Religious",
+    "style": "Baroque revival",
+    "medium": "Oil",
+    "surface": "Linen",
+    "widthCm": 60,
+    "heightCm": 90,
+    "orientation": "portrait",
+    "colours": "night blue with a column of warm light",
+    "mood": "Dramatic",
+    "description": "A traveller sleeps on the ground while a ladder of light rises into the clouds. A column of warm light cuts through the night blue sky.",
+    "summary": "A dramatic painting of Jacob's dream.",
+    "tags": [
+      "jacob",
+      "ladder",
+      "dream",
+      "night",
+      "light",
+      "dramatic"
+    ],
+    "tones": [
+      "#1C2A4A",
+      "#E8C27A",
+      "#4A4F66"
+    ],
+    "colourGroups": [
+      "blue",
+      "yellow"
+    ],
+    "featured": false,
+    "heroOfDay": false,
+    "image": "/images/paintings/jacob-s-ladder.jpg",
+    "palette": []
+  }
+]

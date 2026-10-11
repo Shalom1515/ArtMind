@@ -1,0 +1,34 @@
+[
+  {
+    "question": "What is ArtMind?",
+    "answer": "ArtMind is an online painting gallery. You can browse 60 paintings by 12 artists, search in plain sentences, get suggestions based on what you like and ask our assistant about any painting."
+  },
+  {
+    "question": "Do I need an account?",
+    "answer": "No. Anyone can browse, search, identify a style and ask the assistant. An account lets you save favourites, export them as a PDF and get recommendations built on what you view and save."
+  },
+  {
+    "question": "How does the search understand a sentence?",
+    "answer": "We pick out the words that match what we know about each painting, such as category, style, medium, colour and mood. Those words become chips you can remove, and the results are ranked by how well they match."
+  },
+  {
+    "question": "What happens to the image I upload?",
+    "answer": "We read its colours to suggest a likely style, category and mood, and to find similar paintings in the gallery. The image is deleted as soon as the analysis is done and is never stored."
+  },
+  {
+    "question": "Can I download painting details?",
+    "answer": "Yes. Every painting page has Download PDF and Download Word buttons. When you are logged in you can also export your favourites as a PDF."
+  },
+  {
+    "question": "How are recommendations made?",
+    "answer": "We look at the paintings you view and save, and the categories you picked when you registered. Then we suggest paintings that share their category, style, mood or artist."
+  },
+  {
+    "question": "How do I change my password?",
+    "answer": "Log in, open Profile and choose the Security tab. If you have forgotten it, use Forgot password on the log in page and we will email you a reset link."
+  },
+  {
+    "question": "Who built ArtMind?",
+    "answer": "ArtMind is the Semester 2 eProject of Stanley, Amanda and Shalom for the Advanced Diploma in Software Engineering at Aptech NG, Ajao Centre, Lagos."
+  }
+]

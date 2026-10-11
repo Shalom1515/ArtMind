@@ -1,0 +1,90 @@
+:root {
+  --colour-page: #f4efe6;
+  --colour-band: #eae2d3;
+  --colour-card: #f8f5ef;
+  --colour-surface: #fbf9f5;
+  --colour-line: #d9d0c1;
+  --colour-line-strong: #bfb4a3;
+  --colour-ink: #1b1917;
+  --colour-ink-soft: #3a3633;
+  --colour-muted: #77706a;
+  --colour-ochre: #9a6b2f;
+  --colour-ochre-soft: #a98552;
+  --colour-accent: #8b1e1e;
+  --colour-dark: #1f1d1b;
+  --colour-dark-line: #3d3935;
+  --colour-dark-text: #ede6da;
+  --colour-dark-muted: #a9a196;
+  --colour-error: #8b1e1e;
+  --colour-success: #4f6b3a;
+  --colour-overlay: rgba(27, 25, 23, 0.45);
+
+  --chart-1: #1b1917;
+  --chart-2: #8b1e1e;
+  --chart-3: #c9a04a;
+  --chart-4: #6b4e36;
+  --chart-5: #dcd3c4;
+  --chart-6: #9a9692;
+
+  --font-serif: 'Newsreader', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+
+  --text-xs: 0.6875rem;
+  --text-sm: 0.8125rem;
+  --text-base: 0.9375rem;
+  --text-md: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.625rem;
+  --text-2xl: 2.125rem;
+  --text-3xl: 2.75rem;
+  --text-4xl: 3.5rem;
+
+  --tracking-label: 0.16em;
+  --tracking-button: 0.14em;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  --gutter: 16px;
+  --max-width: 1200px;
+  --header-height: 60px;
+
+  --radius: 0;
+  --radius-pill: 999px;
+  --border: 1px solid var(--colour-line);
+  --border-strong: 1px solid var(--colour-ink);
+
+  --shadow-card: 0 1px 2px rgba(27, 25, 23, 0.04);
+  --shadow-pop: 0 12px 32px rgba(27, 25, 23, 0.16);
+
+  --ease: cubic-bezier(0.2, 0.6, 0.2, 1);
+  --speed: 160ms;
+
+  --z-header: 50;
+  --z-launcher: 60;
+  --z-panel: 70;
+  --z-menu: 80;
+  --z-modal: 90;
+  --z-toast: 100;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --gutter: 24px;
+    --header-height: 64px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --gutter: 40px;
+    --header-height: 72px;
+  }
+}

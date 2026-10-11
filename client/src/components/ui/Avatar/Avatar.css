@@ -1,0 +1,23 @@
+.avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--colour-band);
+  border: 1px solid var(--colour-line);
+  color: var(--colour-ochre);
+  font-family: var(--font-serif);
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar__initials {
+  line-height: 1;
+}

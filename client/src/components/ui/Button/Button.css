@@ -1,0 +1,125 @@
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  padding: 0 var(--space-5);
+  border: 1px solid transparent;
+  border-radius: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-button);
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+  transition: background-color var(--speed) var(--ease), color var(--speed) var(--ease), border-color var(--speed) var(--ease);
+}
+
+.btn--sm {
+  min-height: 34px;
+  padding: 0 var(--space-4);
+  font-size: 10.5px;
+}
+
+.btn--lg {
+  min-height: 52px;
+  padding: 0 var(--space-6);
+  font-size: var(--text-sm);
+}
+
+.btn--block {
+  display: flex;
+  width: 100%;
+}
+
+.btn--primary {
+  background: var(--colour-ink);
+  color: var(--colour-page);
+}
+
+.btn--primary:hover:not(:disabled) {
+  background: #34302c;
+}
+
+.btn--secondary {
+  background: transparent;
+  color: var(--colour-ink);
+  border-color: var(--colour-ink);
+}
+
+.btn--secondary:hover:not(:disabled) {
+  background: var(--colour-ink);
+  color: var(--colour-page);
+}
+
+.btn--light {
+  background: transparent;
+  color: var(--colour-dark-text);
+  border-color: var(--colour-dark-text);
+}
+
+.btn--light:hover:not(:disabled) {
+  background: var(--colour-dark-text);
+  color: var(--colour-ink);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--colour-ink);
+  padding-inline: var(--space-2);
+}
+
+.btn--ghost:hover:not(:disabled) {
+  color: var(--colour-accent);
+}
+
+.btn--link {
+  min-height: auto;
+  padding: 0 0 3px;
+  background: transparent;
+  color: var(--colour-ink);
+  border: 0;
+  border-bottom: 1px solid var(--colour-accent);
+}
+
+.btn--link:hover:not(:disabled) {
+  color: var(--colour-accent);
+}
+
+.btn--danger {
+  background: transparent;
+  color: var(--colour-error);
+  border-color: var(--colour-error);
+}
+
+.btn--danger:hover:not(:disabled) {
+  background: var(--colour-error);
+  color: #fff;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+}
+
+.btn--loading .btn__label {
+  visibility: hidden;
+}
+
+.btn__spinner {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: btn-spin 0.7s linear infinite;
+}
+
+@keyframes btn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

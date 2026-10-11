@@ -1,0 +1,19 @@
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: var(--text-sm);
+  color: var(--colour-ink-soft);
+}
+
+.breadcrumb li + li::before {
+  content: '/';
+  margin-right: 6px;
+  color: var(--colour-muted);
+}
+
+.breadcrumb a:hover {
+  color: var(--colour-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

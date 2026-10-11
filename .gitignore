@@ -1,0 +1,26 @@
+# dependencies and builds
+node_modules/
+dist/
+coverage/
+
+# secrets
+.env
+.env.local
+
+# logs
+*.log
+npm-debug.log*
+
+# files people upload while the server runs
+server/uploads/
+
+# original .png images are converted to .jpg by npm run images
+server/data/images/**/*.png
+client/public/images/**/*.png
+docs/test_images/*.png
+
+# editor and system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

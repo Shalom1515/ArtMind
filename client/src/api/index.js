@@ -1,0 +1,12 @@
+export { ApiError, USE_MOCK, getHealth } from './client.js';
+export * as paintingsApi from './paintings.js';
+export * as artistsApi from './artists.js';
+export * as collectionsApi from './collections.js';
+export * as searchApi from './search.js';
+export * as identifyApi from './identify.js';
+export * as assistantApi from './assistant.js';
+export * as authApi from './auth.js';
+export * as meApi from './me.js';
+export * as favouritesApi from './favourites.js';
+export * as adminApi from './admin.js';
+export * as contactApi from './contact.js';

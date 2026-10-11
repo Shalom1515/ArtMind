@@ -1,0 +1,93 @@
+.painting-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.painting-card__media {
+  position: relative;
+}
+
+.painting-card__image-link {
+  display: block;
+}
+
+.painting-card__image-link .framed__img {
+  transition: opacity 280ms var(--ease), transform 400ms var(--ease);
+}
+
+.painting-card__image-link:hover .framed__img--in {
+  transform: scale(1.02);
+}
+
+.painting-card__heart {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--colour-card);
+  color: var(--colour-ink);
+  transition: color var(--speed) var(--ease), transform var(--speed) var(--ease);
+}
+
+.painting-card__heart:hover {
+  color: var(--colour-accent);
+}
+
+.painting-card__heart:active {
+  transform: scale(0.9);
+}
+
+.painting-card__heart--on {
+  color: var(--colour-accent);
+}
+
+.painting-card__body {
+  padding-top: var(--space-3);
+}
+
+.painting-card__category {
+  margin-bottom: 2px;
+}
+
+.painting-card__title {
+  font-family: var(--font-serif);
+  font-size: var(--text-md);
+  line-height: 1.3;
+}
+
+.painting-card--lg .painting-card__title {
+  font-size: var(--text-lg);
+}
+
+.painting-card--sm .painting-card__title {
+  font-size: var(--text-sm);
+}
+
+.painting-card__title a:hover {
+  color: var(--colour-accent);
+}
+
+.painting-card__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-top: 2px;
+  font-size: var(--text-sm);
+  color: var(--colour-muted);
+}
+
+.painting-card--sm .painting-card__meta {
+  font-size: var(--text-xs);
+}
+
+.painting-card__reason {
+  margin-top: 4px;
+  font-size: var(--text-xs);
+  color: var(--colour-muted);
+}

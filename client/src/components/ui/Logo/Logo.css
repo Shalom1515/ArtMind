@@ -1,0 +1,58 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--colour-ink);
+  line-height: 1;
+}
+
+.logo--light {
+  color: var(--colour-dark-text);
+}
+
+.logo__image {
+  height: 30px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+}
+
+.logo--lg .logo__image {
+  height: 38px;
+  max-width: 220px;
+}
+
+.logo__mark {
+  width: 22px;
+  height: 26px;
+  color: var(--colour-ochre);
+}
+
+.logo--light .logo__mark {
+  color: var(--colour-dark-text);
+}
+
+.logo__word {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.logo--lg .logo__word {
+  font-size: 1.85rem;
+}
+
+.logo--sm .logo__word {
+  font-size: 1.25rem;
+}
+
+@media (min-width: 1024px) {
+  .logo__image {
+    height: 34px;
+  }
+
+  .logo__word {
+    font-size: 1.75rem;
+  }
+}
