@@ -3,7 +3,7 @@ import { cx } from '../../../utils/cx.js';
 import Icon from '../Icon/Icon.jsx';
 import './TagInput.css';
 
-export default function TagInput({ label, value = [], onChange, placeholder = 'Add a tag', max = 12, error, labelStyle, id, className }) {
+export default function TagInput({ label, value = [], onChange, placeholder = 'Add a tag', max = 12, error, hint, labelStyle, id, className }) {
   const autoId = useId();
   const inputId = id || autoId;
   const [draft, setDraft] = useState('');
@@ -57,9 +57,11 @@ export default function TagInput({ label, value = [], onChange, placeholder = 'A
           placeholder={value.length >= max ? '' : placeholder}
           disabled={value.length >= max}
           aria-invalid={error ? true : undefined}
+          aria-describedby={error ? `${inputId}-error` : hint ? `${inputId}-hint` : undefined}
         />
       </div>
-      {error && <p className="field__error">{error}</p>}
+      {hint && !error && <p id={`${inputId}-hint`} className="field__hint">{hint}</p>}
+      {error && <p id={`${inputId}-error`} className="field__error">{error}</p>}
     </div>
   );
 }

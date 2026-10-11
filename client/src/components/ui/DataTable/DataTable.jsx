@@ -1,4 +1,5 @@
 import { cx } from '../../../utils/cx.js';
+import Icon from '../Icon/Icon.jsx';
 import Skeleton from '../Skeleton/Skeleton.jsx';
 import './DataTable.css';
 
@@ -12,9 +13,23 @@ export default function DataTable({
   mobile = 'scroll',
   onRowClick,
   selectedKey,
+  sortKey,
+  sortDir = 'asc',
+  onSort,
   className,
 }) {
   const cell = (column, row) => (column.render ? column.render(row) : row[column.key]);
+
+  const head = (c) => {
+    if (!c.sortable || !onSort) return c.header;
+    const active = sortKey === c.key;
+    return (
+      <button type="button" className={cx('data-table__sort', active && 'data-table__sort--on')} onClick={() => onSort(c.key)}>
+        {c.header}
+        <Icon name={active && sortDir === 'desc' ? 'chevronDown' : 'chevronUp'} size={12} strokeWidth={2} />
+      </button>
+    );
+  };
 
   return (
     <div className={cx('data-table', `data-table--${mobile}`, className)}>
@@ -24,8 +39,14 @@ export default function DataTable({
           <thead>
             <tr>
               {columns.map((c) => (
-                <th key={c.key} scope="col" style={{ width: c.width, textAlign: c.align }} className={cx(c.hideOnPhone && 'data-table__hide')}>
-                  {c.header}
+                <th
+                  key={c.key}
+                  scope="col"
+                  style={{ width: c.width, textAlign: c.align }}
+                  className={cx(c.hideOnPhone && 'data-table__hide')}
+                  aria-sort={c.sortable && onSort ? (sortKey === c.key ? (sortDir === 'desc' ? 'descending' : 'ascending') : 'none') : undefined}
+                >
+                  {head(c)}
                 </th>
               ))}
             </tr>

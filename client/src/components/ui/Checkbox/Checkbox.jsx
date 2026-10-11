@@ -18,6 +18,7 @@ export default function Checkbox({ label, checked = false, onChange, count, disa
           disabled={disabled}
           onChange={(e) => onChange?.(e.target.checked, e)}
           aria-invalid={error ? true : undefined}
+          aria-describedby={error ? `${inputId}-error` : undefined}
         />
         <span className="checkbox__box" aria-hidden="true">
           <Icon name="check" size={13} strokeWidth={2.4} />
@@ -25,7 +26,7 @@ export default function Checkbox({ label, checked = false, onChange, count, disa
         <span className="checkbox__label">{label ?? children}</span>
         {count !== undefined && <span className="checkbox__count">{count}</span>}
       </label>
-      {error && <p className="field__error">{error}</p>}
+      {error && <p id={`${inputId}-error`} className="field__error">{error}</p>}
     </div>
   );
 }

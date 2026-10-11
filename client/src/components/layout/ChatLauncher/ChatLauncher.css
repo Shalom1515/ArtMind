@@ -29,3 +29,7 @@
     bottom: var(--space-6);
   }
 }
+
+.chat-launcher[hidden] {
+  display: none;
+}

@@ -27,6 +27,29 @@
   white-space: nowrap;
 }
 
+.data-table__sort {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+.data-table__sort .icon {
+  opacity: 0.35;
+}
+
+.data-table__sort:hover .icon,
+.data-table__sort--on .icon {
+  opacity: 1;
+}
+
+.data-table__sort--on {
+  color: var(--colour-ink);
+}
+
 .data-table td {
   padding: 12px 16px;
   border-bottom: var(--border);

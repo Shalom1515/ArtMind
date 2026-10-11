@@ -1,6 +1,8 @@
-import { useEffect, useState } from 'react';
-import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { useCallback, useEffect, useId, useRef, useState } from 'react';
+import { Link, NavLink, Outlet, useLocation, useNavigate, useOutletContext } from 'react-router-dom';
+import { listMessages } from '../../../api/admin.js';
 import { useAuth } from '../../../context/AuthContext.jsx';
+import { useDebounce } from '../../../hooks/useDebounce.js';
 import { useToast } from '../../../context/ToastContext.jsx';
 import { ADMIN_NAV } from '../../../utils/constants.js';
 import { cx } from '../../../utils/cx.js';
@@ -31,12 +33,53 @@ export function AdminHeader({ title, children }) {
   );
 }
 
+export function AdminSearch({ value, onChange, placeholder, label }) {
+  const id = useId();
+  const [text, setText] = useState(value || '');
+  const debounced = useDebounce(text, 300);
+  const changeRef = useRef(onChange);
+  changeRef.current = onChange;
+
+  useEffect(() => {
+    setText(value || '');
+  }, [value]);
+
+  useEffect(() => {
+    if (debounced.trim() !== (value || '')) changeRef.current(debounced.trim());
+  }, [debounced]);
+
+  return (
+    <div className="admin-search" role="search">
+      <label htmlFor={id} className="visually-hidden">{label || placeholder}</label>
+      <Icon name="search" size={16} />
+      <input id={id} type="search" className="input" value={text} onChange={(e) => setText(e.target.value)} placeholder={placeholder} maxLength={100} />
+    </div>
+  );
+}
+
+export function useAdminCounts() {
+  return useOutletContext() || {};
+}
+
 export default function AdminLayout() {
   const { pathname } = useLocation();
   const { logout } = useAuth();
   const toast = useToast();
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [newMessages, setNewMessages] = useState(0);
+
+  const refreshCounts = useCallback(async () => {
+    try {
+      const { counts } = await listMessages('new');
+      setNewMessages(counts?.new || 0);
+    } catch {
+    }
+  }, []);
+
+  useEffect(() => {
+    refreshCounts();
+  }, [refreshCounts]);
 
   useEffect(() => {
     setMenuOpen(false);
@@ -44,9 +87,9 @@ export default function AdminLayout() {
   }, [pathname]);
 
   const onLogout = async () => {
+    await navigate('/');
     await logout();
     toast.info('You are logged out.');
-    navigate('/');
   };
 
   const links = (className) =>
@@ -54,6 +97,12 @@ export default function AdminLayout() {
       <li key={item.to}>
         <NavLink to={item.to} end={item.end} className={({ isActive }) => cx(className, isActive && 'active')}>
           {item.label}
+          {item.to === '/admin/messages' && newMessages > 0 && (
+            <span className="admin-layout__count">
+              {newMessages}
+              <span className="visually-hidden"> new</span>
+            </span>
+          )}
         </NavLink>
       </li>
     ));
@@ -83,7 +132,7 @@ export default function AdminLayout() {
       </header>
 
       <main id="main" className="admin-layout__main" tabIndex={-1}>
-        <Outlet />
+        <Outlet context={{ refreshCounts, newMessages }} />
       </main>
 
       <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} tone="dark" logoSuffix="Admin" label="Admin menu">
