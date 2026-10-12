@@ -8,7 +8,8 @@ const serverRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '.
 const projectRoot = path.resolve(serverRoot, '..');
 const p = (...parts) => path.join(projectRoot, ...parts);
 
-const FONT_FILE = p('server', 'scripts', 'fonts', 'Newsreader-Regular.ttf');
+// Newsreader at weight 500 and optical size 24, so the wordmark stays solid at header size
+const FONT_FILE = p('server', 'scripts', 'fonts', 'Newsreader-Medium.ttf');
 const OUT = p('client', 'public', 'brand');
 
 const CHARCOAL = '#1B1917';
@@ -24,12 +25,12 @@ const MARK_RATIO = 0.875;
 const MARK_TO_WORD = 1.46;
 const GAP = 0.5;
 
-// Line weights of option 1 in the logo sheet, as a share of the mark width
-const OUTER_LINE = 0.036;
-const INNER_LINE = 0.026;
+// Line weights as a share of the mark width, heavy enough to stay crisp at header size
+const OUTER_LINE = 0.06;
+const INNER_LINE = 0.045;
 const MAT = 0.06;
 
-const PADDING = 0.1;
+const PADDING = 0.04;
 const LOGO_HEIGHT = 256;
 const MARK_CANVAS = 1024;
 const MARK_FILL = 0.875;
