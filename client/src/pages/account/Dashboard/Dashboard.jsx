@@ -164,7 +164,7 @@ export default function Dashboard() {
                 <Carousel itemWidth={isPhone ? '30%' : isTablet ? '22%' : 'calc((100% - 80px) / 6)'} label="Recently viewed">
                   {recent.map((p) => (
                     <Link key={p.slug} to={`/paintings/${p.slug}`} className="page-dashboard__recent-tile" aria-label={`${p.title} by ${p.artist?.name}`}>
-                      <FramedImage src={p.image} alt={p.title} tones={p.tones} ratio="4 / 3" frame="mat" />
+                      <FramedImage src={p.image} alt={p.title} tones={p.tones} ratio="4 / 3" frame="mat" label={p.title} labelMeta={p.artist?.name} />
                     </Link>
                   ))}
                 </Carousel>

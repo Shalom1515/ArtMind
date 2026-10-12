@@ -161,10 +161,10 @@ The twelve colour groups used by the Dominant colour filter are `red`, `orange`,
 Public. Tells you the server is up and whether the database is connected.
 
 ```json
-{ "status": "ok", "database": "connected" }
+{ "status": "ok", "database": "connected", "imageModel": "ready" }
 ```
 
-`database` is `connected` or `disconnected`.
+`database` is `connected` or `disconnected`. `imageModel` is `ready`, `loading` or `unavailable` and says whether MobileNet has loaded for Identify a style. The mock answers `database: "mock"` and leaves `imageModel` out.
 
 ### `GET /api/options`
 Public. The lists used by filters and form selects.
@@ -219,7 +219,7 @@ Request: `{ "email": "ada@artmind.test", "code": "482915" }`
 
 Response: `{ "user": User }`
 
-Codes expire after 15 minutes. Five wrong tries and the code is cancelled, so the user has to ask for a new one.
+Codes expire after 10 minutes. Five wrong tries and the code is cancelled, so the user has to ask for a new one.
 
 ### `POST /api/auth/resend`
 Public. Sends a new code. Only one per minute.
@@ -408,7 +408,7 @@ Public.
 ## Search
 
 ### `GET /api/search`
-Public. Takes a sentence, works out what it means and returns matching paintings. Each search is saved to the search log for the admin charts.
+Public. Takes a sentence, works out what it means and returns matching paintings. Each new search is saved to the search log for the admin charts. A call with `exclude` is the same search with a chip removed, so it is not saved again, as in the mock.
 
 | Query | Example | Notes |
 |---|---|---|
@@ -430,7 +430,7 @@ Response:
 }
 ```
 
-Chip types are `category`, `style`, `medium`, `surface`, `colour`, `mood`, `artist` and `keyword`. Removing a chip means calling again with its `key` added to `exclude`.
+Chip types are `category`, `style`, `medium`, `surface`, `colour`, `mood`, `artist`, `year` and `keyword`. The real server adds `year` (for example `year:2010s` with the label "Years: 2010s") and three group values: `colour:warm` (red, orange or ochre), `colour:cool` (teal, blue or grey) and `style:Modern` (contemporary or abstract). Removing a chip means calling again with its `key` added to `exclude`.
 
 ## Identify a style
 
@@ -646,7 +646,7 @@ Query: `days` is `7`, `30` (default) or `90`.
 }
 ```
 
-`totals.paintings`, `artists` and `users` are all time. `views` and `searches` are for the chosen days. `viewsPerDay` and `searchesPerDay` have one entry per day, zero included. `topPaintings` has up to 10, `topQueries` up to 8, `recentActivity` up to 10. Activity `type` is `view`, `favourite`, `search` or `register`.
+`totals.paintings`, `artists` and `users` are all time. `views` and `searches` are for the chosen days. `viewsPerDay` and `searchesPerDay` have one entry per day, zero included. `topPaintings` has up to 10, `topQueries` up to 8, `recentActivity` up to 10. Activity `type` is `view`, `favourite`, `search` or `register`. Days are counted in Africa/Lagos time. The real server always lists all six categories in `viewsByCategory`, zero included; the mock lists only categories with views.
 
 ### Paintings
 
@@ -658,7 +658,7 @@ Query: `days` is `7`, `30` (default) or `90`.
 | `GET /api/admin/paintings/:id` | `{ "painting": Painting }` with `artistSlug` added, for the edit form. |
 | `POST /api/admin/paintings` | Create. `multipart/form-data`, see below. Answers `201 { "painting": Painting }`. |
 | `PUT /api/admin/paintings/:id` | Update. Same fields, `image` optional. Answers `{ "painting": Painting }`. |
-| `DELETE /api/admin/paintings/:id` | Delete the painting, its image, its favourites and its place in collections. Answers `204`. |
+| `DELETE /api/admin/paintings/:id` | Delete the painting, its favourites and its place in collections. Old views stay for the charts and the image file stays on disk, as in the mock. Answers `204`. |
 | `PATCH /api/admin/paintings/:id/featured` | Body `{ "featured": true }`. Answers `{ "painting": PaintingCard }`. |
 | `POST /api/admin/paintings/generate` | Fills style, mood, tags, summary and palette from an image. See below. |
 
@@ -693,7 +693,7 @@ Nothing is saved until the form is saved.
 | Method and path | What it does |
 |---|---|
 | `GET /api/admin/collections` | `{ "items": [CollectionCard] }` with `description`, `order` and the full `paintings` slug list added. |
-| `POST /api/admin/collections` | Body `{ "title", "shortLine", "description", "paintings": [slugs], "order" }`. Answers `201 { "collection": ... }`. |
+| `POST /api/admin/collections` | Body `{ "title", "shortLine", "description", "paintings": [slugs], "order" }`. The real server needs 4 to 8 paintings and keeps their order (the mock accepts one or more). Answers `201 { "collection": ... }`. |
 | `PUT /api/admin/collections/:id` | Same body, all optional. |
 | `DELETE /api/admin/collections/:id` | `204`. The paintings stay. |
 
@@ -725,4 +725,4 @@ Nothing is saved until the form is saved.
 | `/uploads/...` | `server/uploads` (avatars and paintings added by admins) |
 | `/images/...` anything else | `client/public/images` (site images, served by Vite or the client build) |
 
-In development the Vite server forwards `/api`, `/images/paintings`, `/images/artists` and `/uploads` to the Express server on port 5000.
+In development the Vite server forwards `/api` and `/uploads` to the Express server on port 5000, and a small Vite plugin serves `/images/paintings` and `/images/artists` straight from `server/data/images`, so they load even when the server is not running.

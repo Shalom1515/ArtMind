@@ -11,6 +11,8 @@ export default function FramedImage({
   frame = 'none',
   fit = 'cover',
   caption,
+  label,
+  labelMeta,
   loading = 'lazy',
   className,
   children,
@@ -21,7 +23,7 @@ export default function FramedImage({
     <figure className={cx('framed', `framed--${frame}`, className)}>
       <div className="framed__mat">
         <div
-          className={cx('framed__box', !ratio && state !== 'loaded' && 'framed__box--fallback')}
+          className={cx('framed__box', !ratio && state !== 'loaded' && 'framed__box--fallback', label && 'framed__box--labelled')}
           style={{ aspectRatio: ratio, background: placeholderBackground(tones) }}
         >
           {src && state !== 'missing' && (
@@ -36,6 +38,12 @@ export default function FramedImage({
             />
           )}
           {state === 'missing' && alt && <span className="visually-hidden">{alt}</span>}
+          {label && (
+            <span className="framed__label" aria-hidden="true">
+              <span className="framed__label-title">{label}</span>
+              {labelMeta && <span className="framed__label-meta">{labelMeta}</span>}
+            </span>
+          )}
           {children}
         </div>
       </div>

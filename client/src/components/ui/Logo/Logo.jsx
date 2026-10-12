@@ -5,7 +5,7 @@ import './Logo.css';
 
 export default function Logo({ tone = 'dark', suffix, to = '/', size = 'md', className }) {
   const [imageFailed, setImageFailed] = useState(false);
-  const src = tone === 'light' ? '/brand/header_logo_light.png' : '/brand/header_logo.png';
+  const src = tone === 'light' ? '/brand/logo_light.png' : '/brand/logo.png';
   const useImage = !suffix && !imageFailed;
 
   return (

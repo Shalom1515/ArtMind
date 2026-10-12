@@ -6,6 +6,10 @@ export { embed, embedFile, isModelReady, loadModel, modelStatus };
 
 const NEIGHBOURS = 7;
 const SHARPNESS = 0.05;
+const TEXTURE_NEIGHBOURS = 5;
+// Weights found with a leave one out check over the 60 gallery paintings.
+const TEXTURE_WEIGHT = 0.7;
+const HINT_WEIGHT = 1.5;
 
 // Some ImageNet labels say a lot about the subject, which helps when the gallery has no close match yet.
 const SUBJECT_HINTS = [
@@ -39,7 +43,7 @@ export function forgetPaintingVectors() {
 
 async function paintingVectors() {
   if (vectors && Date.now() - vectorsAt < 10 * 60 * 1000) return vectors;
-  vectors = await Painting.find({}).select('+embedding slug category style mood medium palette tones').lean();
+  vectors = await Painting.find({}).select('+embedding slug category style mood medium palette tones measures').lean();
   vectorsAt = Date.now();
   return vectors;
 }
@@ -51,6 +55,24 @@ export async function nearestByEmbedding(embedding, { limit = NEIGHBOURS, exclud
     .map((p) => ({ painting: p, score: cosine(embedding, p.embedding) }))
     .sort((a, b) => b.score - a.score)
     .slice(0, limit);
+}
+
+const textureOf = (m) => [m.flatness * 2, m.edges * 4, m.saturation, m.contrast * 2, m.brightness];
+
+// Neighbours by texture: flat colour and hard edges, or fine detail, from the sharp measurements.
+export function nearestByTexture(stats, all, limit = TEXTURE_NEIGHBOURS) {
+  const target = textureOf(stats);
+  return all
+    .filter((p) => p.measures?.flatness !== undefined)
+    .map((p) => ({ painting: p, distance: Math.hypot(...textureOf(p.measures).map((v, i) => v - target[i])) }))
+    .sort((a, b) => a.distance - b.distance)
+    .slice(0, limit)
+    .map((r) => ({ painting: r.painting, weight: 1 / (0.05 + r.distance) }));
+}
+
+function normalise(totals) {
+  const sum = [...totals.values()].reduce((a, b) => a + b, 0) || 1;
+  return new Map([...totals.entries()].map(([k, v]) => [k, v / sum]));
 }
 
 function vote(rows, read) {
@@ -119,13 +141,14 @@ export async function recognise(buffer, { similarCount = 4 } = {}) {
     const near = await nearestByEmbedding(embedding, { limit: Math.max(NEIGHBOURS, similarCount) });
     const top = near[0]?.score || 0;
     rows = near.slice(0, NEIGHBOURS).map((r) => ({ ...r, weight: Math.exp((r.score - top) / SHARPNESS) }));
-    const categoryVotes = vote(rows, (p) => p.category);
-    const sum = [...categoryVotes.values()].reduce((a, b) => a + b, 0) || 1;
-    for (const [key, value] of categoryVotes) categoryVotes.set(key, value / sum);
+    const categoryVotes = normalise(vote(rows, (p) => p.category));
+    for (const [key, value] of normalise(vote(nearestByTexture(analysis.stats, all), (p) => p.category))) {
+      categoryVotes.set(key, (categoryVotes.get(key) || 0) + value * TEXTURE_WEIGHT);
+    }
     for (const guess of await classify(buffer, 5)) {
       if (guess.probability < 0.25) continue;
       const hint = SUBJECT_HINTS.find((h) => h.pattern.test(guess.className));
-      if (hint) categoryVotes.set(hint.category, (categoryVotes.get(hint.category) || 0) + guess.probability * 1.5);
+      if (hint) categoryVotes.set(hint.category, (categoryVotes.get(hint.category) || 0) + guess.probability * HINT_WEIGHT);
     }
     category = best(categoryVotes, 'Landscape');
     const byPalette = all

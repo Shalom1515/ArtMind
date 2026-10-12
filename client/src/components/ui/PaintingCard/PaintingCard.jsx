@@ -29,7 +29,16 @@ export default function PaintingCard({
     <article className={cx('painting-card', `painting-card--${size}`, className)}>
       <div className="painting-card__media">
         <Link to={href} className="painting-card__image-link" tabIndex={-1} aria-hidden="true">
-          <FramedImage src={painting.image} alt="" tones={painting.tones} ratio={ratio} fit={fit} frame="mat" />
+          <FramedImage
+            src={painting.image}
+            alt=""
+            tones={painting.tones}
+            ratio={ratio}
+            fit={fit}
+            frame="mat"
+            label={painting.title}
+            labelMeta={[painting.artist?.name, painting.year].filter(Boolean).join(' · ')}
+          />
         </Link>
         {showHeart && (
           <button

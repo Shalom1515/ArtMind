@@ -7,3 +7,8 @@ export const searchQuery = z.object({
   sort: z.enum(['best', 'newest', 'oldest']).optional().default('best').catch('best'),
   ...pageQuery,
 });
+
+export const suggestQuery = z.object({
+  q: z.string().trim().max(60).optional().default('').catch(''),
+  limit: z.coerce.number().int().min(1).max(10).optional().default(6).catch(6),
+});

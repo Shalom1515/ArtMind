@@ -133,7 +133,7 @@ function Trending({ items }) {
       <Carousel itemWidth={width} label="Trending this week">
         {items.map((p) => (
           <Link key={p.slug} to={`/paintings/${p.slug}`} className="page-home__trend" aria-label={`${p.title} by ${p.artist?.name}`}>
-            <FramedImage src={p.image} alt={p.title} tones={p.tones} ratio="5 / 3" />
+            <FramedImage src={p.image} alt={p.title} tones={p.tones} ratio="5 / 3" label={p.title} labelMeta={p.artist?.name} />
           </Link>
         ))}
       </Carousel>
@@ -201,7 +201,7 @@ function FeaturedArtist({ data }) {
           {paintings.slice(0, 3).map((p) => (
             <li key={p.slug}>
               <Link to={`/paintings/${p.slug}`} aria-label={p.title}>
-                <FramedImage src={p.image} alt={p.title} tones={p.tones} ratio="4 / 3" />
+                <FramedImage src={p.image} alt={p.title} tones={p.tones} ratio="4 / 3" label={p.title} labelMeta={p.year ? String(p.year) : undefined} />
               </Link>
             </li>
           ))}

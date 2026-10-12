@@ -365,6 +365,19 @@ route('GET', '/collections/:slug', ({ params }) => {
 });
 
 
+route('GET', '/search/suggest', ({ query }) => {
+  const q = String(query.q || '').trim().slice(0, 60).toLowerCase();
+  if (!q) return ok({ query: q, suggestions: [] });
+  const wordStart = (title) => title.toLowerCase().split(/[\s'"(-]+/).some((word) => word.startsWith(q));
+  const rank = (p) => (p.title.toLowerCase().startsWith(q) ? 0 : wordStart(p.title) ? 1 : q.length >= 3 && p.title.toLowerCase().includes(q) ? 2 : 3);
+  const items = db().paintings
+    .map((p) => ({ p, r: rank(p) }))
+    .filter((x) => x.r < 3)
+    .sort((a, b) => a.r - b.r || (b.p.viewCount || 0) - (a.p.viewCount || 0))
+    .slice(0, Math.min(Number(query.limit) || 6, 10));
+  return ok({ query: q, suggestions: items.map((x) => toCard(x.p)) });
+});
+
 route('GET', '/search', ({ query }) => {
   const q = String(query.q || '').trim().slice(0, 200);
   if (!q) validationError({ q: 'Type what you would like to see.' });

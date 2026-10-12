@@ -1,5 +1,6 @@
 import { Painting, SearchLog } from '../../models/index.js';
-import { ARTIST_FIELDS, toCard } from '../catalogue/index.js';
+import { ARTIST_FIELDS, findCards, toCard } from '../catalogue/index.js';
+import { escapeRegex } from '../../validators/common.js';
 import { chatJson, isAvailable, TIMEOUTS } from '../assistant/modelClient.js';
 import { colourLabel, coloursOf, GROUPS, LABELS, STOP_WORDS, TYPE_ORDER, vocabulary } from './vocabulary.js';
 
@@ -207,4 +208,20 @@ export async function search({ q, exclude = [], sort = 'best', page, limit }, { 
     total: items.length,
     pages,
   };
+}
+
+export async function suggest({ q = '', limit = 6 } = {}) {
+  const text = String(q).trim().slice(0, 60);
+  if (!text) return [];
+  const safe = escapeRegex(text);
+  const wordStart = new RegExp(`(^|[\s'"(\-])${safe}`, 'i');
+  const filter = { title: text.length >= 3 ? new RegExp(safe, 'i') : wordStart };
+  const found = await findCards(filter, { sort: { viewCount: -1, title: 1 }, limit: 40 });
+  const lower = text.toLowerCase();
+  const rank = (p) => (p.title.toLowerCase().startsWith(lower) ? 0 : wordStart.test(p.title) ? 1 : 2);
+  return found
+    .map((p, i) => ({ p, i, r: rank(p) }))
+    .sort((a, b) => a.r - b.r || a.i - b.i)
+    .slice(0, limit)
+    .map(({ p }) => toCard(p));
 }
