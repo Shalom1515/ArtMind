@@ -195,10 +195,10 @@ export default function ChatPanel() {
           <Icon name="close" size={20} />
         </button>
       </header>
-      {(context.paintingTitle || context.query) && (
+      {context.paintingTitle && (
         <div className="chat-panel__context">
-          <span>{context.paintingTitle ? 'About' : 'Search'}: <strong>{context.paintingTitle || context.query}</strong></span>
-          <button type="button" onClick={clearContext} aria-label={`Stop asking about ${context.paintingTitle || context.query}`}>
+          <span>About: <strong>{context.paintingTitle}</strong></span>
+          <button type="button" onClick={clearContext} aria-label={`Stop asking about ${context.paintingTitle}`}>
             <Icon name="close" size={14} />
           </button>
         </div>
