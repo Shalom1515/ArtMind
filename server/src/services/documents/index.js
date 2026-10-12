@@ -54,14 +54,20 @@ async function imageFor(slug, maxSide = 1200) {
   }
 }
 
+// Starts listening straight away; the caller ends the document once everything is drawn,
+// otherwise anything added after an await (the painting, the text) is lost.
 function collect(doc) {
   return new Promise((resolve, reject) => {
     const chunks = [];
     doc.on('data', (c) => chunks.push(c));
     doc.on('end', () => resolve(Buffer.concat(chunks)));
     doc.on('error', reject);
-    doc.end();
   });
+}
+
+function finish(doc, done) {
+  doc.end();
+  return done;
 }
 
 function pdfHeader(doc) {
@@ -73,7 +79,7 @@ function pdfHeader(doc) {
 }
 
 function heading(doc, text) {
-  doc.moveDown(0.8).font('Helvetica-Bold').fontSize(9).fillColor(MUTED).text(text.toUpperCase(), { characterSpacing: 1.5 });
+  doc.moveDown(0.8).font('Helvetica-Bold').fontSize(9).fillColor(MUTED).text(text.toUpperCase(), 50, doc.y, { width: 495, characterSpacing: 1.5 });
   doc.moveDown(0.3).font('Helvetica').fontSize(10.5).fillColor(INK);
 }
 
@@ -133,7 +139,7 @@ export async function paintingPdf(p) {
 
   heading(doc, 'See it on ArtMind');
   doc.fillColor('#7A2E22').text(pageLink(p.slug), 50, doc.y, { link: pageLink(p.slug), underline: true });
-  return done;
+  return finish(doc, done);
 }
 
 const cellBorders = { top: { style: BorderStyle.NONE }, bottom: { style: BorderStyle.SINGLE, size: 4, color: 'D9D0C1' }, left: { style: BorderStyle.NONE }, right: { style: BorderStyle.NONE } };
@@ -227,7 +233,7 @@ export async function favouritesPdf(user, paintings) {
     doc.moveTo(50, doc.y - 7).lineTo(545, doc.y - 7).strokeColor(RULE).lineWidth(0.5).stroke();
   }
   if (!paintings.length) doc.font('Helvetica').fontSize(11).fillColor(INK).text('No saved paintings yet.');
-  return done;
+  return finish(doc, done);
 }
 
 export function sendFile(res, buffer, filename, type) {
