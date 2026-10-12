@@ -7,7 +7,7 @@ import {
   Artist, Collection, ContactMessage, Conversation, Faq, Favourite, Painting, SearchLog, Session, User, ViewEvent,
 } from '../src/models/index.js';
 import { answer, titleFor } from '../src/services/assistant/index.js';
-import { analyseFile } from '../src/services/palette/index.js';
+import { analyseFile, measuresOf } from '../src/services/palette/index.js';
 import { embedFile, isModelReady, loadModel } from '../src/services/recognition/index.js';
 import { runSearch, understandWithRules } from '../src/services/search/index.js';
 
@@ -98,7 +98,7 @@ export async function seedDatabase({ log = console.log, useModel = true, activit
       skipped.push(`${p.slug}.jpg`);
     } else {
       const analysis = await analyseFile(file);
-      if (analysis) Object.assign(extra, { palette: analysis.palette, dominantColour: analysis.dominantColour });
+      if (analysis) Object.assign(extra, { palette: analysis.palette, dominantColour: analysis.dominantColour, measures: measuresOf(analysis.stats) });
       if (useModel && isModelReady()) extra.embedding = (await embedFile(file)) || undefined;
     }
     prepared.push({ ...p, ...extra, artist: artist._id });
@@ -201,17 +201,15 @@ async function seedActivity({ ada, users, paintingDocs, paintingBySlug, random, 
 
   const resultCounts = new Map();
   for (const [query] of QUERIES) resultCounts.set(query, (await runSearch(await understandWithRules(query))).length);
-  const queryTotal = QUERIES.reduce((s, [, w]) => s + w, 0);
+  // Each query gets a fixed share, so the top queries keep the order shown on the admin design.
   const searches = [];
-  for (let d = 29; d >= 0; d -= 1) {
-    const count = 8 + Math.round(random() * 8 + (29 - d) * 0.35);
-    for (let i = 0; i < count; i += 1) {
-      let r = random() * queryTotal;
-      const [query] = QUERIES.find(([, w]) => (r -= w) <= 0) || QUERIES[0];
+  for (const [query, weight] of QUERIES) {
+    for (let i = 0; i < Math.round(weight * 0.6); i += 1) {
+      const daysAgo = Math.floor((1 - Math.sqrt(random())) * 30);
       const byUser = random() < 0.3;
       searches.push({
         query, normalised: query, resultCount: resultCounts.get(query), user: byUser ? pick(users)._id : null,
-        visitorId: byUser ? '' : `seedvisitor${Math.floor(random() * 300)}`, createdAt: new Date(now - d * DAY - random() * DAY * (d === 0 ? 0.4 : 1)),
+        visitorId: byUser ? '' : `seedvisitor${Math.floor(random() * 300)}`, createdAt: new Date(now - daysAgo * DAY - random() * DAY * (daysAgo === 0 ? 0.4 : 1)),
       });
     }
   }

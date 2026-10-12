@@ -1,7 +1,7 @@
 import { saveBlob } from '../utils/download.js';
 
 const BASE = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
-export const USE_MOCK = String(import.meta.env.VITE_USE_MOCK ?? 'true') === 'true';
+export const USE_MOCK = String(import.meta.env.VITE_USE_MOCK ?? 'false') === 'true';
 
 export class ApiError extends Error {
   constructor(status, message, code, fields) {

@@ -1,4 +1,4 @@
-import { describe, test } from 'node:test';
+import { describe, test } from 'vitest';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { CATEGORIES, COLOUR_GROUPS, MEDIUMS, MOODS, STYLES, SURFACES } from '../src/config/constants.js';

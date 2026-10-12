@@ -9,7 +9,7 @@
     "start": "node src/server.js",
     "seed": "node scripts/seed.js",
     "images": "node scripts/prepareImages.js",
-    "test": "node --test --test-reporter=spec"
+    "test": "vitest run"
   },
   "dependencies": {
     "@tensorflow-models/mobilenet": "^2.1.1",
