@@ -113,8 +113,6 @@ function measure(pixels, width, height) {
   const lum = new Float64Array(count);
   const buckets = Object.fromEntries(COLOUR_KEYS.map((k) => [k, 0]));
   let chromatic = 0;
-  let hueX = 0;
-  let hueY = 0;
   for (let i = 0; i < count; i += 1) {
     const r = pixels[i * 3];
     const g = pixels[i * 3 + 1];
@@ -127,10 +125,7 @@ function measure(pixels, width, height) {
     if (r > b + 15) warm += 1;
     buckets[colourBucket(r, g, b)] += 1;
     if (max - min > 30 && max > 40 && max < 245) {
-      const [h] = rgbToHsl(r, g, b);
       chromatic += 1;
-      hueX += Math.cos((h * Math.PI) / 180);
-      hueY += Math.sin((h * Math.PI) / 180);
     }
   }
   const brightness = bright / count;
@@ -138,10 +133,13 @@ function measure(pixels, width, height) {
   for (let i = 0; i < count; i += 1) variance += (lum[i] - brightness) ** 2;
 
   let edges = 0;
+  let flat = 0;
   for (let y = 1; y < height - 1; y += 1) {
     for (let x = 1; x < width - 1; x += 1) {
       const i = y * width + x;
-      edges += Math.abs(lum[i + 1] - lum[i - 1]) + Math.abs(lum[i + width] - lum[i - width]);
+      const step = Math.abs(lum[i + 1] - lum[i - 1]) + Math.abs(lum[i + width] - lum[i - width]);
+      edges += step;
+      if (step < 0.03) flat += 1;
     }
   }
   const shares = Object.fromEntries(Object.entries(buckets).map(([k, v]) => [k, v / count]));
@@ -150,9 +148,9 @@ function measure(pixels, width, height) {
     saturation: sat / count,
     contrast: Math.sqrt(variance / count),
     edges: edges / Math.max(1, (width - 2) * (height - 2)),
+    flatness: flat / Math.max(1, (width - 2) * (height - 2)),
     warmth: warm / count,
     chromaticShare: chromatic / count,
-    hueFocus: chromatic ? Math.hypot(hueX, hueY) / chromatic : 1,
     colourShares: shares,
   };
 }
@@ -179,6 +177,11 @@ export async function analyseImage(input) {
     height,
     orientation: width === height ? 'square' : width > height ? 'landscape' : 'portrait',
   };
+}
+
+export function measuresOf(stats) {
+  const round = (v) => Math.round(v * 1000) / 1000;
+  return { brightness: round(stats.brightness), saturation: round(stats.saturation), contrast: round(stats.contrast), edges: round(stats.edges), flatness: round(stats.flatness) };
 }
 
 export async function analyseFile(filePath) {

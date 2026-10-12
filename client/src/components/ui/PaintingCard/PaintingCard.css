@@ -91,3 +91,12 @@
   font-size: var(--text-xs);
   color: var(--colour-muted);
 }
+
+.painting-card:focus-within .framed__label {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.painting-card:focus-within .framed__label-title::after {
+  transform: scaleX(1);
+}

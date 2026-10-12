@@ -20,8 +20,17 @@ async function issueCode(user) {
   const code = sixDigits();
   user.verification = { codeHash: sha256(code), expiresAt: new Date(Date.now() + CODE_LIFETIME), attempts: 0, lastSentAt: new Date() };
   await user.save();
-  await sendVerificationCode(user.email, user.name, code);
+  const result = await sendVerificationCode(user.email, user.name, code);
+  const delivered = Boolean(result?.sent || result?.printed);
+  if (!delivered) {
+    user.verification.lastSentAt = undefined;
+    await user.save();
+  }
+  return delivered;
 }
+
+const notDelivered = () =>
+  new ApiError(503, 'We could not send your code email just now. Please try again in a moment.', 'MAIL_FAILED');
 
 export async function register(req, res) {
   const { name, email, password, interests } = req.body;
@@ -32,7 +41,7 @@ export async function register(req, res) {
   const passwordHash = await bcrypt.hash(password, BCRYPT_ROUNDS);
   if (user) Object.assign(user, { name, passwordHash, interests });
   else user = new User({ name, email, passwordHash, interests, joinedAt: new Date() });
-  await issueCode(user);
+  if (!(await issueCode(user))) throw notDelivered();
   res.status(201).json({ email, message: `We sent a six digit code to ${email}.` });
 }
 
@@ -72,7 +81,7 @@ export async function resend(req, res) {
     if (last && Date.now() - last.getTime() < RESEND_WAIT) {
       throw new ApiError(429, 'Please wait a minute before asking for another code.', 'RATE_LIMITED');
     }
-    await issueCode(user);
+    if (!(await issueCode(user))) throw notDelivered();
   }
   res.json({ message: 'A new code is on its way.', retryAfter: RESEND_WAIT / 1000 });
 }

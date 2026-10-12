@@ -14,7 +14,16 @@ export function titleFor(message) {
   return clean.charAt(0).toUpperCase() + clean.slice(1);
 }
 
-const uniqueFollowUps = (list) => [...new Set(list.filter(Boolean))].slice(0, 3);
+// Words that show a painting really has the subject, for questions like "who painted the most birds".
+const SUBJECTS = {
+  bird: ['bird', 'heron', 'egret', 'crane', 'stork', 'owl', 'sparrow', 'kingfisher', 'swan', 'dove'],
+  flower: ['flower', 'peon', 'lil', 'roses', 'dahlia', 'lotus', 'marigold', 'sunflower', 'hibiscus', 'bougainvillea', 'blossom'],
+  portrait: ['portrait', 'face', 'woman', 'man', 'girl', 'sisters'],
+  river: ['river', 'stream', 'lagoon', 'lake', 'water'],
+  angel: ['angel'],
+};
+
+const uniqueFollowUps =(list) => [...new Set(list.filter(Boolean))].slice(0, 3);
 
 function examplesFor(entry, paintings) {
   return paintings.filter((p) => (entry.style && p.style === entry.style) || (entry.medium && p.medium === entry.medium) || (entry.surface && p.surface === entry.surface));
@@ -48,14 +57,27 @@ async function ruleAnswer(message, { contextPainting, contextQuery, last, painti
 
   const chips = await understandWithRules(text);
   if (/most/.test(text) && /artist|who/.test(text) && chips.some((c) => c.type === 'category' || c.type === 'keyword')) {
-    const matching = await runSearch(chips, { all: paintings });
+    const subject = Object.keys(SUBJECTS).find((key) => text.includes(key));
+    const pattern = subject ? new RegExp(`\\b(${SUBJECTS[subject].join('|')})`) : null;
+    const mentions = (p) => pattern.test(`${p.title} ${(p.tags || []).join(' ')} ${p.description || ''}`.toLowerCase());
+    const matching = subject ? paintings.filter(mentions) : await runSearch(chips, { all: paintings });
     const counts = new Map();
     for (const p of matching) counts.set(p.artist?.name, (counts.get(p.artist?.name) || 0) + 1);
-    const [top] = [...counts.entries()].sort((a, b) => b[1] - a[1]);
+    const ranked = [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+    const [top] = ranked;
+    const tied = ranked.filter(([, n]) => n === top?.[1]).map(([name]) => name);
+    if (top && tied.length > 1) {
+      return {
+        text: `No single artist stands out: ${tied.slice(0, -1).join(', ')} and ${tied[tied.length - 1]} each have ${top[1] === 1 ? 'one' : top[1]} in ArtMind.`,
+        paintings: matching.slice(0, 3),
+        followUps: [`Tell me about ${tied[0]}`, 'More like these', 'Similar artists'],
+        facts: [`${tied.join(', ')} each have ${top[1]} matching paintings.`],
+      };
+    }
     if (top) {
       const theirs = matching.filter((p) => p.artist?.name === top[0]);
       return {
-        text: `${top[0]} has the most in ArtMind, with ${top[1]}. Here they are.`,
+        text: `${top[0]} has the most in ArtMind, with ${top[1]}. ${top[1] === 1 ? 'Here it is.' : 'Here they are.'}`,
         paintings: theirs.slice(0, 3),
         followUps: [`Tell me about ${top[0]}`, 'Similar artists', 'More like these'],
         facts: [`${top[0]} has ${top[1]} matching paintings.`],

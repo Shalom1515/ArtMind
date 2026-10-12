@@ -29,6 +29,7 @@ const paintingSchema = new mongoose.Schema(
     dominantColour: { type: String, enum: [...COLOUR_GROUPS.map((c) => c.key), ''], default: '' },
     embedding: { type: [Number], default: undefined, select: false },
     viewCount: { type: Number, default: 0, min: 0 },
+    measures: { brightness: Number, saturation: Number, contrast: Number, edges: Number, flatness: Number },
     featured: { type: Boolean, default: false },
     heroOfDay: { type: Boolean, default: false },
     image: { type: String, required: true },

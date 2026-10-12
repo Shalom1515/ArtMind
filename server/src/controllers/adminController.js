@@ -10,7 +10,7 @@ import { chatJson, isAvailable, TIMEOUTS } from '../services/assistant/modelClie
 import {
   ARTIST_FIELDS, artistCards, collectionCards, fullPainting, saveCounts, toArtistCard, toCard,
 } from '../services/catalogue/index.js';
-import { analyseImage } from '../services/palette/index.js';
+import { analyseImage, measuresOf } from '../services/palette/index.js';
 import { embed, forgetPaintingVectors, recognise } from '../services/recognition/index.js';
 import { forgetVocabulary } from '../services/search/index.js';
 import { endAllSessions } from '../services/sessions/index.js';
@@ -82,6 +82,7 @@ async function applyImage(painting, buffer, formPalette) {
   painting.tones = painting.palette.slice(0, 3);
   painting.dominantColour = analysis.dominantColour;
   painting.colourGroups = analysis.colourGroups;
+  painting.measures = measuresOf(analysis.stats);
   const embedding = await embed(data);
   painting.embedding = embedding || undefined;
   if (!embedding) console.warn(`[admin] MobileNet is not ready, so ${painting.slug} was saved without an embedding.`);
