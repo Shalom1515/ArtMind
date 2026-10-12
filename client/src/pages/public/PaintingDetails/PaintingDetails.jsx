@@ -26,7 +26,9 @@ import './PaintingDetails.css';
 
 const WALL_IMAGE = '/images/room/wall.jpg';
 const BENCH_CM = 180;
-// Share of the wall.jpg width taken by the bench. 0.4 until wall.jpg is added and measured.
+// The bench in wall.jpg is 729 px wide in a 1536 px image
+const BENCH_SHARE_PHOTO = 729 / 1536;
+// Share used for the drawn bench when wall.jpg is missing
 const BENCH_SHARE = 0.4;
 // Height in the wall image, as a share from the top, where the painting's bottom edge hangs.
 const HANG_LINE = 0.6;
@@ -41,7 +43,8 @@ function WallView({ painting }) {
     img.src = WALL_IMAGE;
   }, []);
 
-  const widthShare = ((painting.widthCm || 60) / BENCH_CM) * BENCH_SHARE;
+  const benchShare = photo === 'ready' ? BENCH_SHARE_PHOTO : BENCH_SHARE;
+  const widthShare = ((painting.widthCm || 60) / BENCH_CM) * benchShare;
   const ratio = `${painting.widthCm || 4} / ${painting.heightCm || 3}`;
 
   return (
