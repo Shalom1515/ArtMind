@@ -34,9 +34,9 @@ const FEATURES = [
 ];
 
 const TEAM = [
-  { name: 'Stanley', role: 'Team leader, backend', photo: '/images/team/stanley.jpg' },
-  { name: 'Amanda', role: 'Gallery and discovery pages', photo: '/images/team/amanda.jpg' },
-  { name: 'Shalom', role: 'Account, assistant and admin pages', photo: '/images/team/shalom.jpg' },
+  { name: 'Stanley', role: 'Team leader, backend', photo: '/images/team/profile-placeholder.svg' },
+  { name: 'Amanda', role: 'Gallery and discovery pages', photo: '/images/team/profile-placeholder.svg' },
+  { name: 'Shalom', role: 'Account, assistant and admin pages', photo: '/images/team/profile-placeholder.svg' },
 ];
 
 export default function About() {
@@ -90,7 +90,6 @@ export default function About() {
             </li>
           ))}
         </ul>
-        <p className="page-about__credit">Semester 2 eProject, Advanced Diploma in Software Engineering, Aptech NG, Ajao Centre, Lagos.</p>
       </section>
     </div>
   );
